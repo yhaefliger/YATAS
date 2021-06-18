@@ -9,7 +9,7 @@
     "start": "concurrently \"eleventy --serve\"  \"npm:watch-*\"",
     "build-css": "NODE_ENV=production npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
     "build-js": "NODE_ENV=production npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js  --bundle --target=es2016 --minify",
-    "build": "npm run clean && concurrently \"ELEVENTY_PRODUCTION=true eleventy\" \"npm:build-*\""
+    "build": "concurrently \"ELEVENTY_PRODUCTION=true eleventy\" \"npm:build-*\""
   },
   "keywords": [
     "eleventy",
