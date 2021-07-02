@@ -9,18 +9,11 @@ module.exports = function(eleventyConfig) {
   //eleventyConfig.addPassthroughCopy('src/.htaccess')
 
   /**
-   * "Versioning" for assets files
-   */
-  eleventyConfig.addShortcode('version', function () {
-    return String(Date.now())
-  })
-
-  /**
    * HTML Minifier for production builds
    */
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (
-      process.env.ELEVENTY_PRODUCTION &&
+      process.env.ELEVENTY_ENV == 'production' &&
       outputPath &&
       outputPath.endsWith('.html')
     ) {
@@ -37,7 +30,8 @@ module.exports = function(eleventyConfig) {
 
   return {
     dir: {
-      input: "src"
+      input: "src",
+      data: "../_data"
     }
   };
 };

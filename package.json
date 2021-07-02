@@ -6,10 +6,10 @@
     "clean": "del _site",
     "watch-css": "npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css -w",
     "watch-js": "npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js --bundle --target=es2016 --watch",
-    "start": "concurrently \"eleventy --serve\"  \"npm:watch-*\"",
+    "start": "concurrently \"ELEVENTY_ENV=development eleventy --serve\"  \"npm:watch-*\"",
     "build-css": "NODE_ENV=production npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
     "build-js": "NODE_ENV=production npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js  --bundle --target=es2016 --minify",
-    "build": "concurrently \"ELEVENTY_PRODUCTION=true eleventy\" \"npm:build-*\""
+    "build": "concurrently \"npm:build-*\" && node hash && ELEVENTY_ENV=production eleventy"
   },
   "keywords": [
     "eleventy",
@@ -26,7 +26,9 @@
     "concurrently": "^6.2.0",
     "del-cli": "^4.0.0",
     "esbuild": "^0.12.9",
+    "fast-glob": "^3.2.6",
     "html-minifier": "^4.0.0",
+    "md5": "^2.3.0",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.0"
   }

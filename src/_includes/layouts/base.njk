@@ -9,10 +9,15 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
     <meta name="generator" content="Eleventy" />
-    
-    <link rel="stylesheet" href="/css/styles.css?v={% version %}"/>
 
-    <script defer src="/js/scripts.js?v={% version %}"></script>
+    {% if project.environment == "production" %}
+      <link rel="stylesheet" href="/{{ hash['css/styles.css'] }}"/>
+      <script defer src="/{{ hash['js/scripts.js'] }}"></script>
+    {% else %}
+      <link rel="stylesheet" href="/css/styles.css"/>
+      <script defer src="/js/scripts.js"></script>
+    {% endif %}
+
 
     {% block head %}{% endblock %}
   </head>
