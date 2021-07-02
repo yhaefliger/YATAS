@@ -19,10 +19,9 @@ assets.forEach((asset) => {
   let hashedAsset = assetNameArray.join('.');
 
   
-  fs.copyFile(file, '_site/' + hashedAsset, function (err) {
-    if (err) throw err
-  });
+  fs.renameSync(file, '_site/' + hashedAsset);
 
   jsonValue[asset] = hashedAsset;
 });
+
 fs.writeFileSync(dataFile, JSON.stringify(jsonValue));
