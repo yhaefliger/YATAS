@@ -22,6 +22,9 @@ jspm_packages/
 # Mac
 .DS_Store
 
+#dev env
+.vscode
+
 #Build
 _site
 
