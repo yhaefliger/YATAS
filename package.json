@@ -6,10 +6,10 @@
     "clean": "del _site",
     "watch-css": "npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css -w",
     "watch-js": "npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js --bundle --target=es2016 --watch",
-    "start": "concurrently \"ELEVENTY_ENV=development eleventy --serve\"  \"npm:watch-*\"",
-    "build-css": "NODE_ENV=production npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
-    "build-js": "NODE_ENV=production npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js  --bundle --target=es2016 --minify",
-    "build": "concurrently \"npm:build-*\" && node hash && ELEVENTY_ENV=production eleventy"
+    "start": "NODE_ENV=development concurrently \"node hash\"  \"ELEVENTY_ENV=development eleventy --serve\"  \"npm:watch-*\"",
+    "build-css": "npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
+    "build-js": "npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js  --bundle --target=es2016 --minify",
+    "build": "NODE_ENV=production concurrently \"npm:build-*\" && node hash && ELEVENTY_ENV=production eleventy"
   },
   "keywords": [
     "eleventy",
