@@ -6,7 +6,7 @@ module.exports = function(eleventyConfig) {
    * Files to copy
    * https://www.11ty.dev/docs/copy/
    */
-  //eleventyConfig.addPassthroughCopy('src/.htaccess')
+  eleventyConfig.addPassthroughCopy('src/img')
 
   /**
    * HTML Minifier for production builds

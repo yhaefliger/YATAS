@@ -1,6 +1,8 @@
 # YATAS - Yet Another Tailwind Apline Starter
 
-![YATAS!!!](https://i.ibb.co/TR3P8p1/YATAS.jpg)
+<a href="https://yatas.netlify.app/" target="_blank">
+  <img alt="YATAS Logo" width="350" src="./_site/img/logo.svg">
+</a>
 
 Minimal 11ty starter project that build css with the new [tailwindcss cli](https://github.com/tailwindlabs/tailwindcss/releases#all-new-improved-tailwind-cli) (tailwind 2.2) and [esbuild](https://esbuild.github.io/) for javascript.
 

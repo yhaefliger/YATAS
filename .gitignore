@@ -24,3 +24,6 @@ jspm_packages/
 
 #Build
 _site
+
+#Generated hash data
+_data/hash.json
