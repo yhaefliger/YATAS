@@ -5,10 +5,10 @@
   "scripts": {
     "clean": "del _site",
     "watch-css": "npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css -w",
-    "watch-js": "npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js --bundle --target=es2016 --watch",
+    "watch-js": "npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js --bundle --target=es2018 --watch",
     "start": "NODE_ENV=development concurrently \"node hash\"  \"ELEVENTY_ENV=development eleventy --serve\"  \"npm:watch-*\"",
     "build-css": "npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
-    "build-js": "npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js  --bundle --target=es2016 --minify",
+    "build-js": "npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js  --bundle --target=es2018 --minify",
     "build": "NODE_ENV=production concurrently \"npm:build-*\" && node hash && ELEVENTY_ENV=production eleventy"
   },
   "keywords": [
@@ -25,7 +25,7 @@
     "autoprefixer": "^10.2.6",
     "concurrently": "^6.2.0",
     "del-cli": "^4.0.0",
-    "esbuild": "^0.12.9",
+    "esbuild": "^0.14.0",
     "html-minifier": "^4.0.0",
     "md5": "^2.3.0",
     "postcss": "^8.3.5",
