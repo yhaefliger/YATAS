@@ -8,7 +8,7 @@ Minimal 11ty starter project that build css with tailwindcss cli and [esbuild](h
 
 ## [Demo](https://yatas.netlify.app/)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/needbrainz/yatas)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yhaefiger/yatas)
 
 ## Stack
 
