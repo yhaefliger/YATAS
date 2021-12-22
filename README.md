@@ -4,7 +4,7 @@
   <img alt="YATAS Logo" width="350" src="./src/img/logo.svg">
 </a>
 
-Minimal 11ty starter project that build css with the new [tailwindcss cli](https://github.com/tailwindlabs/tailwindcss/releases#all-new-improved-tailwind-cli) (tailwind 3) and [esbuild](https://esbuild.github.io/) for javascript.
+Minimal 11ty starter project that build css with tailwindcss cli and [esbuild](https://esbuild.github.io/) for javascript.
 
 ## [Demo](https://yatas.netlify.app/)
 
