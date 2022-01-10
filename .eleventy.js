@@ -1,7 +1,13 @@
 const htmlmin = require('html-minifier')
-
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 module.exports = function(eleventyConfig) {
+  /**
+   * Upgrade helper
+   * Uncomment if you need help upgrading to new major version.
+   */
+  //eleventyConfig.addPlugin(UpgradeHelper);
+
   /**
    * Files to copy
    * https://www.11ty.dev/docs/copy/
