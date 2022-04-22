@@ -1,3 +1,14 @@
+@import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
+
+/* make all buttons same to be gdpr compliant */
+#c-bns button,
+#s-bns button {
+  color: #fff;
+  color: var(--cc-btn-primary-text);
+  background: #253b48;
+  background: var(--cc-btn-primary-bg);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

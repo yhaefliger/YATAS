@@ -12,9 +12,10 @@ module.exports = function (eleventyConfig) {
   /**
    * https://github.com/luwes/eleventy-plugin-sharp
    */
+  pathPrefix = "/html/website/";
   eleventyConfig.addPlugin(
     sharpPlugin({
-      urlPath: "/img",
+      urlPath: `${pathPrefix}/img`,
       outputDir: "./_site/img",
     })
   );
@@ -50,6 +51,6 @@ module.exports = function (eleventyConfig) {
       input: "src",
       data: "../_data",
     },
-    pathPrefix: "/html/website/",
+    pathPrefix: pathPrefix,
   };
 };
