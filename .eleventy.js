@@ -50,5 +50,6 @@ module.exports = function (eleventyConfig) {
       input: "src",
       data: "../_data",
     },
+    pathPrefix: "/html/website/",
   };
 };
