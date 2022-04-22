@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply font-heading text-4xl;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply text-gray-800;
+  }
+}
+
+@layer components {
+  .thick-heading {
+    @apply text-[30vw] md:text-12xl uppercase break-all leading-none;
+  }
+  .menu {
+    @apply flex flex-col gap-2;
+    @screen md {
+      @apply grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    li {
+      @apply bg-gray-800 hover:bg-gray-700 transition-colors text-white;
+      a {
+        @apply flex flex-col justify-between p-4 w-full md:h-60 break-all;
+      }
+    }
+  }
+}
