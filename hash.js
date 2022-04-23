@@ -2,8 +2,8 @@ const fs = require('fs');
 const md5 = require('md5');
 
 const assets = [
-  'css/styles.css',
-  'js/scripts.js'
+  '/css/styles.css',
+  '/js/scripts.js'
 ];
 
 const dataFile = '_data/hash.json';

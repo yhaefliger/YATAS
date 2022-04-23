@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
     <meta name="generator" content="Eleventy" />
 
-    <link rel="stylesheet" href="/{{ hash['css/styles.css'] }}"/>
-    <script defer src="/{{ hash['js/scripts.js'] }}"></script>
+    <link rel="stylesheet" href="{{ hash['/css/styles.css'] | url }}"/>
+    <script defer src="{{ hash['/js/scripts.js'] | url }}"></script>
 
     {% block head %}{% endblock %}
   </head>
