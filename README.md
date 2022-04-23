@@ -43,17 +43,17 @@ The script will look for files to include a hash (based on the md5 of the built 
 The entry point for matching regular file path to versionned path is generated as an 11ty global data object in ```_data/hash.json``` with the simple structure
 ```js
 {
-  'path/to/resource.css': 'path/to/resource.hash.css'
+  '/path/to/resource.css': '/path/to/resource.hash.css'
 }
 ```
 
-In your 11ty template, you can then simply retrieve the versioned path from the array ```{{ hash['path/to/resource.css'] }}```
+In your 11ty template, you can then simply retrieve the versioned path from the array ```{{ hash['/path/to/resource.css'] | url }}```
 
 If you want to add other assets to this generated data array, simply include the path in the ```assets``` const in the ```hash.js``` file in the root directory (files listed below are already included).
 
 ```js
 const assets = [
-  'css/styles.css',
-  'js/scripts.js'
+  '/css/styles.css',
+  '/js/scripts.js'
 ];
 ```
