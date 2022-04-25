@@ -16,10 +16,11 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       gray: colors.stone,
+      blue: colors.sky,
     },
     extend: {
       fontFamily: {
-        sans: ["Merriweather", ...defaultTheme.fontFamily.serif],
+        serif: ["Merriweather", ...defaultTheme.fontFamily.serif],
         heading: ["Anton", ...defaultTheme.fontFamily.sans],
       },
     },

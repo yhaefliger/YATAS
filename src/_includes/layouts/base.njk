@@ -27,7 +27,7 @@
     {% block head %}{% endblock %}
   </head>
   <body class="antialiased">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl p-4 md:px-0 mx-auto flex min-h-screen">
       {% block content %}
         {{ content | safe }}
       {% endblock %}

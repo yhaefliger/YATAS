@@ -14,17 +14,26 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply text-gray-800 font-serif;
+  }
   h1 {
     @apply font-heading text-4xl;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    @apply text-gray-800;
+  a {
+    @apply text-blue-700 hover:text-blue-900;
+
+    &.external {
+      @apply inline-flex items-center gap-0.5;
+      svg {
+        @apply inline-block fill-blue-700;
+      }
+      &:hover {
+        svg {
+          @apply fill-blue-900;
+        }
+      }
+    }
   }
 }
 
@@ -39,10 +48,39 @@
       grid-template-columns: repeat(12, 1fr);
     }
     li {
-      @apply bg-gray-800 hover:bg-gray-700 transition-colors text-white;
+      @apply bg-gray-800 hover:bg-gray-700 transition-colors text-white rounded;
       a {
-        @apply flex flex-col justify-between p-4 w-full md:h-60 break-all;
+        @apply flex flex-col justify-between p-4 w-full md:h-60 break-all text-white;
       }
+      div {
+        @apply text-white;
+      }
+    }
+  }
+  #fotohaecker {
+    @apply flex flex-col gap-2 sm:grid h-full sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl self-center mx-auto;
+    @screen sm {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  #fotohaecker-heading {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#4faecc),
+      color-stop(#469abc),
+      to(#347884)
+    );
+    background-image: linear-gradient(90deg, #4faecc, #469abc, #347884);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @apply pt-6 sm:text-10xl lg:text-[12rem] xl:text-[17rem];
+  }
+  .skills-list {
+    li {
+      @apply inline-block bg-blue-600 text-white rounded-lg px-1 font-sans font-bold text-sm;
     }
   }
 }
