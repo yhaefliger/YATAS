@@ -1,0 +1,15 @@
+---
+permalink: '/.htaccess'
+eleventyExcludeFromCollections: true
+---
+
+## BEGIN Caching https://varvy.com/pagespeed/cache-control.html#htaccess
+# One year for image files
+<filesMatch ".(jpg|jpeg|png|gif|ico|svg|woff2|webp)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+# One month for css and js
+<filesMatch ".(css|js)$">
+Header set Cache-Control "max-age=2628000, public"
+</filesMatch>
+## END Caching

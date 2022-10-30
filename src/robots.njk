@@ -1,0 +1,12 @@
+---
+permalink: '/robots.txt'
+eleventyExcludeFromCollections: true
+---
+
+User-agent: * 
+Allow: {{ "/" | url }}
+Disallow: {{ "/vacation" | url }}
+Disallow: {{ "/html" | url }}
+Disallow: /_WPBACKUP2022
+
+Sitemap: https://fschoenfeldt.de/sitemap.xml

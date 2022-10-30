@@ -1,0 +1,29 @@
+#fotohaecker {
+  @apply mx-auto flex h-full flex-col gap-x-4 self-center sm:grid sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl;
+  @screen sm {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+#fotohaecker-heading {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#4faecc),
+    color-stop(#469abc),
+    to(#347884)
+  );
+  background-image: linear-gradient(90deg, #4faecc, #469abc, #347884);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @apply pt-6 sm:text-10xl lg:text-[12rem] xl:text-[17rem];
+}
+.technologies-used-list {
+  li {
+    @apply inline-block rounded-lg bg-blue-700 px-1 font-sans text-sm font-bold text-white;
+  }
+}
+.external {
+  @apply flex items-center gap-0.5;
+}

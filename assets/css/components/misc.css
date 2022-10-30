@@ -1,0 +1,51 @@
+/* https://alpinejs.dev/directives/cloak */
+[x-cloak] {
+  display: none !important;
+}
+
+.thick-heading {
+  @apply break-all text-[30vw] uppercase leading-none md:text-12xl;
+}
+.menu {
+  @apply flex flex-col gap-2 text-lg;
+  @screen md {
+    @apply grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .gray-bg {
+    @apply w-max bg-gray-800 text-white;
+  }
+  > li {
+    @apply rounded bg-gray-800 text-white transition-opacity hover:opacity-90;
+    &:hover {
+      a div {
+        @apply underline;
+      }
+    }
+    a {
+      @apply flex w-full flex-col justify-between gap-2 break-all p-4 text-white md:h-60;
+    }
+    div {
+      @apply text-white;
+    }
+  }
+  .projects {
+    @apply transition-opacity hover:opacity-100;
+    &:hover {
+      a div {
+        @apply no-underline;
+      }
+    }
+    div > div {
+      @apply hover:opacity-90;
+      &:hover {
+        a div {
+          @apply underline;
+        }
+      }
+    }
+    a {
+      @apply h-[11.2rem];
+    }
+  }
+}

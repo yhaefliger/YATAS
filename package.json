@@ -1,15 +1,17 @@
 {
-  "name": "yatas",
+  "name": "fschoenfeldt-website",
   "version": "1.0.0",
-  "description": "Yet Another Tailwind Apline Starter",
+  "description": "Frederik Schönfeldt Website",
   "scripts": {
     "clean": "del _site",
-    "watch-css": "npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css -w",
-    "watch-js": "npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js --bundle --target=es2018 --watch",
+    "watch-css": "npx tailwindcss --postcss -i ./assets/css/styles.css -o ./_site/css/styles.css -w",
+    "watch-js": "npx esbuild ./assets/js/app.js ./assets/js/app_vacation.js ./assets/js/app_manager.js --outdir=./_site/js/ --bundle --target=es2018 --watch",
     "start": "NODE_ENV=development concurrently \"node hash\"  \"ELEVENTY_ENV=development eleventy --serve\"  \"npm:watch-*\"",
-    "build-css": "npx tailwindcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
-    "build-js": "npx esbuild ./assets/js/scripts.js --outfile=./_site/js/scripts.js  --bundle --target=es2018 --minify",
-    "build": "NODE_ENV=production concurrently \"npm:build-*\" && node hash && ELEVENTY_ENV=production eleventy"
+    "start:e2e": "NODE_ENV=development concurrently \"node hash\"  \"ELEVENTY_ENV=development eleventy --serve --port 8081\"  \"npm:watch-*\"",
+    "build-css": "npx tailwindcss --postcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
+    "build-js": "npx esbuild ./assets/js/app.js ./assets/js/app_vacation.js ./assets/js/app_manager.js --outdir=./_site/js/ --bundle --target=es2018 --minify",
+    "build": "NODE_ENV=production concurrently \"npm:test --testNamePattern print\" \"npm:build-*\" && node hash && ELEVENTY_ENV=production eleventy",
+    "test": "npx playwright test"
   },
   "keywords": [
     "eleventy",
@@ -20,16 +22,28 @@
   "author": "Yann Haefliger<hello@needbrainz.com>",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-upgrade-help": "^1.0.1",
-    "alpinejs": "^3.0.6",
-    "autoprefixer": "^10.4.0",
-    "concurrently": "^7.0.0",
-    "del-cli": "^4.0.0",
-    "esbuild": "^0.14.0",
+    "@axe-core/playwright": "^4.5.0",
+    "@playwright/test": "^1.27.1",
+    "@tailwindcss/typography": "^0.5.7",
+    "alpinejs": "^3.10.5",
+    "autoprefixer": "^10.4.13",
+    "chart.js": "^3.9.1",
+    "concurrently": "^7.5.0",
+    "del-cli": "^5.0.0",
+    "eleventy-plugin-sharp": "^0.1.1",
+    "esbuild": "^0.15.12",
     "html-minifier": "^4.0.0",
     "md5": "^2.3.0",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.7"
+    "postcss": "^8.4.18",
+    "postcss-import": "^15.0.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.2.1",
+    "vanilla-cookieconsent": "^2.8.8"
+  },
+  "dependencies": {
+    "debounce": "^1.2.1"
   }
 }

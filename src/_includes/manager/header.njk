@@ -1,0 +1,37 @@
+<header class="w-full bg-cyan-200 tracking-wider py-4 mb-2
+               space-y-4"
+        x-data="{settingsMenuVisible: false}">
+    <div class="flex items-center">
+        <h1 class="flex-1 text-center uppercase font-bold text-xl -mr-16">Space Haven Manager</h1>
+        <button aria-label="open settings menu" 
+                type="button" 
+                @click="settingsMenuVisible = !settingsMenuVisible"
+                data-testid="toggleSettingsMenu">
+            <img alt="settings menu icon" aria-hidden="true" class="mx-4 h-8 lg:h-10 w-8 lg:w-10" src="{{ "/img/settings.svg" | url }}"/>
+        </button>
+    </div>
+    <div id="settingsMenu" 
+         x-cloak
+         x-show="settingsMenuVisible"
+         class="bg-slate-800 w-11/12 max-w-lg mx-auto lg:ml-auto lg:mr-4 p-4">
+        <ul class="flex flex-col">
+            <li class="text-cyan-200">
+                Menu/Options:
+            </li>
+            <li>
+                <button data-testid="clearStorage"
+                        @click="$store.manager.clearStorage" 
+                        class="text-xl text-cyan-200 uppercase w-max p-2 border border-red-300 hover:!bg-red-200/20 max-w-full">
+                    ☢️ clear saved ressources and reload
+                </button>
+            </li>
+            <li class="text-cyan-300 mt-2">
+                🚀 Thanks to Testers:
+                <ul class="list-disc list-inside">
+                    <li class="text-cyan-300">Battlestation G-37 Scientist</li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,93 @@
+<section class="a4 projects">
+    <div class="bg-gray-900 p-4 print:-mt-px">
+        <h2 class="text-white">Kurzportfolio Webentwicklung</h2>
+    </div>
+    <div class="project">
+        <div class="project__header">
+            <h2>Webapp „Fotohäcker“
+                <span class="text-base">
+                    <a href="{{ "/fotohaecker" | url }}">(Info & Demo NodeJS)</a>
+                    |
+                    <a href="https://fschoenf.uber.space/fh/de_DE">(Demo Elixir/Phoenix Stack)</a>
+                </span>
+            </h2>
+            <p>
+                    Eine auf NodeJS & Express basierende Webanwendung zum Hochladen lizenzfreier Fotos. Im Rahmen des Fachs
+                    „WWW-Programmierung“ während des Studiums entstanden. Aktuell portiere ich die Anwendung in den Elixir Phoenix Stack <a href="https://fschoenf.uber.space/fh/de_DE">(Demo)</a>.
+                </p>
+        </div>
+        <div class="project__info">
+            <img class="block self-start rounded shadow-sm" src="{% getUrl project_fotohaecker | resize({ width: 300, height: 150, fit: 'cover' }) | webp %}" alt="Projekt Fotohäcker"/>
+            <div>
+                <h2>Verwendete Techniken</h2>
+                <ul class="list-disc list-inside">
+                    <li>Nodejs</li>
+                    <li>Express</li>
+                    <li>SQLite</li>
+                    <li>Twig/Nunjucks</li>
+                    <li>HTML+CSS+Bootstrap</li>
+                    <li>Javascript</li>
+                    <li>Jest/Playwright (End-to-End Testing)</li>
+                    <li>Supervisor</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="project">
+        <div class="project__header">
+            <h2>Website „Rundgang Filmanalyse“
+                <span class="text-base">
+                    <a href="https://fschoenfeldt.de/html/rundgang_hsfl/">(Demo)</a>
+                </span>
+            </h2>
+            <p>
+                    Statische Website zur Darstellung verschiedener Projektergebnisse. Im Rahmen des Fachs „Filmanalyse“ während des
+                    Studiums entstanden. Das Projekt war dazu gedacht, die Ergebnisse der Studierenden für einen digitalen Rundgang
+                    auszustellen.
+                </p>
+        </div>
+        <div class="project__info">
+            <img class="block self-start rounded shadow-sm" src="{% getUrl project_rundgang_hsfl | resize({ width: 300, height: 150, fit: 'cover' }) | webp %}" alt="Projekt Rundgang HSFL"/>
+            <div>
+                <h2>Verwendete Techniken</h2>
+                <ul class="list-disc list-inside">
+                    <li>Nodejs</li>
+                    <li>Eleventy SSG</li>
+                    <li>Markdown</li>
+                    <li>Twig/Nunjucks</li>
+                    <li>HTML+CSS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="project">
+        <div class="project__header">
+            <h2>Barrierefreie Komponenten
+                <span class="text-base">
+                    <a href="https://github.com/fschoenfeldt/accessible_components">(Source)</a>
+                </span>
+            </h2>
+            <p>
+                    Die Barrierefreien Komponenten sind ein Ergebnis meiner Bachelorthesis „Barrierefreie Webkomponenten im Bezug auf
+                    digital-anamnestische Anwendungen“. Inhaltlich handelt es sich um verschiedene Formularelemente, die barrierefrei
+                    dargestellt und getestet sind. Die Gestaltung der Komponenten wurde nur soweit vorgenommen, wie sie für die
+                    Barrierefreiheit notwendig ist.
+            </p>
+        </div>
+        <div class="project__info">
+            <img class="block self-start rounded shadow-sm" src="{% getUrl project_accessible_components | resize({ width: 300, height: 150, fit: 'cover' }) | webp %}" alt="Projekt Rundgang HSFL"/>
+            <div>
+                <h2>Verwendete Techniken</h2>
+                <ul class="list-disc list-inside">
+                    <li>Elixir</li>
+                    <li>Phoenix</li>
+                    <li>HTML+CSS</li>
+                    <li>Axe CLI (A11Y)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="gap-2 bg-gray-100 border-t p-1 text-sm text-center">
+            Mehr Projekte unter <a target="_blank" href="https://fschoenfeldt.de/">fschoenfeldt.de</a>
+    </div>
+</section>

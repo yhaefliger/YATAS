@@ -1,0 +1,114 @@
+<div x-data="{ressource: {}}" 
+     x-ref="addPriceModal" 
+     class="modal" 
+     x-cloak
+     x-show="$store.manager.modalVisible" 
+     @showaddpricemodal.window="$store.manager.showAddPriceModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="addPriceModalLabel"
+     aria-describedby="priceHistoryChart"
+     :aria-hidden="!$store.manager.modalVisible"
+     @keydown.tab="$store.manager.handleTabModal"
+     @keydown.shift.tab="$store.manager.handleShiftTabModal"
+     >
+    <div class="modal__content" 
+         @click.outside="$store.manager.hideAddPriceModal" 
+         @keyup.escape="$store.manager.hideAddPriceModal">
+        <div class="w-full flex items-center text-xl space-x-2 h-full">
+            <img alt="" :src="ressource.path"/>
+            <div id="addPriceModalLabel" class="text-cyan-200" x-text="ressource.name"></div>
+            <button label="close" 
+                    class="p-2 border-2 border-red-400 flex items-center justify-center h-12 w-12 
+                           shrink-0 !ml-auto hover:!bg-red-400/20" 
+                    @click="$store.manager.hideAddPriceModal">
+                <span class="!text-red-400 font-bold" aria-hidden="true">✕</span>
+                <span class="sr-only">close</span>
+            </button>
+        </div>
+
+        <div>
+            {# TODO: improve a11y of these information #}
+            <div class="w-full flex justify-between items-center px-2 py-0.5"
+                 x-show="ressource?.priceHistory?.length">
+                <div class="text-cyan-200 text-xl" x-text="ressource.min && `↓${ressource.min}`"></div>
+                <div class="text-cyan-200 text-xl" x-text="ressource.average && `⌀${ressource.average}`"></div>
+                <div class="!text-amber-200 text-xl font-bold" x-text="ressource.max && `↑${ressource.max}`"></div>
+            </div>
+            <div x-show="ressource?.priceHistory?.length">
+                <canvas id="priceHistoryChart" :aria-label="`price history of ${ressource?.name || ''}`"></canvas>
+            </div>
+            <div x-show="!ressource?.priceHistory?.length" class="border border-dashed border-cyan-200 p-6 w-full text-cyan-200 text-center italic">
+                no data for graph.. yet
+            </div>
+        </div>
+
+        <div class="h-full flex space-x-4 justify-center">
+            <div class="flex flex-col items-center justify-center">
+                <template x-if="ressource.recipe">
+                    {# <div class="text-cyan-200" x-text="JSON.stringify(ressource.recipe)"></div>
+                    <hr> #}
+                    <template x-for="(ingredient, index) in ressource.recipe">
+                        <div x-data="{ingredientFound: $store.manager.getByName($store.manager, ingredient.name)}"
+                             class="flex flex-col items-center justify-center">
+                            <img alt="" :src="ingredientFound.path" class="w-12"/>
+                            <div class="text-cyan-200" x-text="`${ingredient.amount}x ${ingredient.name}`"></div>
+                            <template x-if="ingredientFound.average">
+                                <div class="text-cyan-200" x-text="`⌀⨯ ${Math.floor(ingredientFound.average * ingredient.amount)}`"></div>
+                            </template>
+                            <template x-if="!ingredientFound.average">
+                                <div class="text-cyan-200/60">no price data</div>
+                            </template>
+                            <div x-show="ressource?.recipe?.length > 1 && index < ressource?.recipe?.length-1" class="text-cyan-200 flex items-center text-4xl font-bold">
+                                +
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </div>
+            <div>
+                <template x-if="ressource.recipe">
+                    <div class="h-full flex items-center space-x-4">
+                        <div class="flex flex-col">
+                            <div x-data="{sum: ressource.recipe.reduce((prev, ingredient) => {
+                                                const ingredientFound = $store.manager.getByName($store.manager, ingredient.name)
+                                                return ingredientFound.average * ingredient.amount + prev;
+                                                }, 0)}" x-show="ressource?.recipe?.length > 1 && sum" class="text-cyan-200 flex items-center text-2xl font-bold">
+                                ∑⌀ = <span class="text-cyan-200 flex items-center text-2xl font-bold"
+                                     x-text="Math.floor(sum)"></span>
+                            </div>
+                            <div class="text-cyan-200 flex items-center justify-center text-4xl font-bold">
+                                →
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img alt="" :src="ressource.path" class="w-12"/>
+                            <div class="text-cyan-200" x-text="ressource.name"></div>
+                            <div class="text-cyan-200 text-xl" x-text="ressource.average ? `⌀${ressource.average}` : `no price data`"></div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <form class="flex flex-col space-y-4" @submit.prevent="$store.manager.handleModal">
+            <label class="text-cyan-200 text-lg" 
+                       for="number_input">
+                       new price:
+            </label>
+            {# TODO remove hidden name input #}
+            <input x-ref="name" type="text" hidden/>
+            <input class="text-3xl bg-transparent border border-cyan-200
+                            bg-slate-700 p-2 text-cyan-200 text-center" 
+                       x-ref="input" 
+                       type="number" 
+                       name="value" 
+                       id="number_input"
+                       min="1"
+                       max="9999"
+                       required>
+            <button class="p-2 border">Submit</button>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,50 @@
+#manager {
+  * {
+    @apply font-space;
+  }
+  button {
+    @apply bg-transparent hover:bg-cyan-100/20;
+  }
+  .wrapper {
+    @apply relative min-h-screen w-full border-2 border-cyan-200 bg-slate-900 p-2 pb-20;
+    .ressources {
+      @apply grid justify-center gap-4;
+      grid-template-columns: repeat(auto-fit, 10rem);
+      &__item {
+        > button {
+          @apply flex h-40 w-40 flex-col items-center justify-center border-2 border-cyan-200 
+                hover:border-cyan-50 hover:bg-cyan-100/20 active:border-cyan-50 active:bg-cyan-100/20;
+        }
+        img {
+          @apply h-10;
+        }
+        * {
+          @apply font-space text-cyan-200;
+        }
+        &__priceinfo {
+          @apply mt-auto w-full border-t border-b-0 border-cyan-200;
+        }
+        &--change {
+          > button {
+            @apply border-2 border-dashed border-cyan-400 opacity-80;
+          }
+        }
+        &--add {
+          > button {
+            @apply border-dashed text-6xl text-cyan-200;
+          }
+        }
+      }
+    }
+    .modal {
+      @apply absolute left-0 top-0 z-10 h-full w-full bg-[rgba(0,0,0,0.5)];
+      &__content {
+        @apply mx-auto mt-2 max-w-sm space-y-4 border border-amber-200 bg-slate-800 p-6 md:max-w-md
+             lg:max-w-xl lg:space-y-6 xl:mt-12;
+      }
+      button {
+        @apply text-xl text-cyan-200;
+      }
+    }
+  }
+}

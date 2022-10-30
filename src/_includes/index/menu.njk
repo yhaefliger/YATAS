@@ -1,0 +1,94 @@
+<div>
+    <nav>
+        <p>menu</p>
+        <ul class="menu">
+            <li class="col-span-5">
+                <a class="" target="_blank" href="https://blog.fschoenfeldt.de/" rel="noopener noreferrer" title="my blog">
+                    blog
+                    <div aria-hidden="true" class="external fill-white">blog.fschoenfeldt.de
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            ariahidden="true"
+                            focusable="false"
+                            x="0px"
+                            y="0px"
+                            viewbox="0 0 100 100"
+                            width="15"
+                            height="15">
+                            <path d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                            <polygon points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                        </svg>
+                    </div>
+                </a>
+            </li>
+            <li class="col-span-2">
+                <a class="" href="mailto:frederikschoenfeldt@gmail.com" title="contact me via email">
+                    hello
+                    <div aria-hidden="true">frederikschoenfeldt@gmail.com</div>
+                </a>
+            </li>
+            <li class="projects col-span-5 relative">
+                <div class="relative z-10 flex p-4">projects</div>
+                <div class="md:grid md:grid-cols-2 bg-white">
+                    <div class="relative">
+                        {% set image = "src/images/fotohaecker_bg.jpg" | sharp %}
+                        <img class="absolute top-0 object-cover h-full w-full rounded" src="{% getUrl image | resize({ width: 500 }) | webp %}" aria-hidden="true"/>
+                        <a class="relative z-10" href="{{ "/fotohaecker" | url }}" title="learn more">
+                            <span class="gray-bg">fotohäcker</span>
+                            <div class="gray-bg" aria-hidden="true">learn more</div>
+                        </a>
+                    </div>
+                    <div class="relative bg-slate-800 border border-cyan-200">
+                        <a class="relative z-10" href="{{ "/project_manager" | url }}" title="learn more">
+                            <span class="w-max text-cyan-200">space haven manager</span>
+                            <div class="w-max text-cyan-200" aria-hidden="true">learn more</div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="col-span-8">
+                <a class="" target="_blank" href="https://unsplash.com/@fschoenfeldt" rel="noopener noreferrer" title="my photos">
+                    photography
+                    <div class="external fill-white" aria-hidden="true">gallery
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            ariahidden="true"
+                            focusable="false"
+                            x="0px"
+                            y="0px"
+                            viewbox="0 0 100 100"
+                            width="15"
+                            height="15">
+                            <path d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                            <polygon points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                        </svg>
+                    </div>
+                </a>
+            </li>
+            <li class="col-span-4">
+                <a
+                    class=""
+                    target="_blank"
+                    href="https://soundcloud.com/frederikschoenfeldt"
+                    rel="noopener noreferrer"
+                    title="my tunes">
+                    tunes
+                    <div class="external fill-white" aria-hidden="true">soundcloud
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            ariahidden="true"
+                            focusable="false"
+                            x="0px"
+                            y="0px"
+                            viewbox="0 0 100 100"
+                            width="15"
+                            height="15">
+                            <path d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                            <polygon points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                        </svg>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

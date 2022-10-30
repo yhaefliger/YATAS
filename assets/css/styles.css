@@ -1,3 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "./custom-base.css";
+
+@import "tailwindcss/components";
+@import "./components";
+
+@import "tailwindcss/utilities";
+
+/* Third Party Libraries */
+@import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
+
+/* make all buttons same to be gdpr compliant */
+#c-bns button,
+#s-bns button {
+  color: #fff;
+  color: var(--cc-btn-primary-text);
+  background: #253b48;
+  background: var(--cc-btn-primary-bg);
+}

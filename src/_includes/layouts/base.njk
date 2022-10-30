@@ -1,23 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{ title }}</title>
+    <title>{{ title }} – Frederik Schönfeldt</title>
     <meta charset="UTF-8"/>
     {% if description %}
-      <meta name="description" content="{{description}}"/>
+      <meta name="description" content="{{ description }}"/>
     {% endif %}
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
-    <meta name="generator" content="Eleventy" />
-
-    <link rel="stylesheet" href="/{{ hash['css/styles.css'] }}"/>
-    <script defer src="/{{ hash['js/scripts.js'] }}"></script>
-
+    <meta name="generator" content="Eleventy"/>
+    <link rel="stylesheet" href="{{ hash['/css/styles.css'] | url }}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Open Graph -->
+    <!-- HTML Meta Tags -->
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://fschoenfeldt.de/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }} – Frederik Schönfeldt">
+    {% if description %}
+      <meta name="og:description" content="{{ description }}"/>
+    {% endif %}
+    <meta
+    property="og:image" content="{{ "/img/o_graph.jpg" | url }}">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="fschoenfeldt.de">
+    <meta property="twitter:url" content="https://fschoenfeldt.de/">
+    <meta name="twitter:title" content="{{ title }} – Frederik Schönfeldt">
+    {% if description %}
+      <meta name="twitter:description" content="{{ description }}"/>
+    {% endif %}
+    <meta
+    name="twitter:image" content="{{ "/img/o_graph.jpg" | url }}">
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    {% include 'favicons.njk' %}
+    <script defer src="{{ hash['/js/app.js'] | url }}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      type="text/plain"
+      data-cookiecategory="analytics"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-51WZFYSLT7"></script>
+    <script type="text/plain" data-cookiecategory="analytics">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-51WZFYSLT7');
+    </script>
     {% block head %}{% endblock %}
   </head>
   <body class="antialiased">
-    {% block content %}
-      {{ content | safe }}
-    {% endblock %}
+    <main class="max-w-6xl p-4 md:px-0 mx-auto flex min-h-screen">
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+    </main>
   </body>
 </html>

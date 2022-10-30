@@ -1,0 +1,73 @@
+---
+title: Fotohaecker
+description: describing the project fotohaecker its technical details
+layout: layouts/base.njk
+---
+
+<div id="fotohaecker">
+  <img src="{{ "/img/fotohaecker_logo.svg" | url }}" alt="fotohaecker logo" class="col-span-1 row-span-4">
+  <h1 class="thick-heading" id="fotohaecker-heading">Fotohäcker.</h1>
+  <p class="text-gray-600 text-lg mb-2 xl:mb-6">
+    upload & share your photos. license free, for any use!
+  </p>
+  <div class="prose">
+    <p>
+      With Fotohäcker
+      <a class="external" href="https://fschoenf.uber.space/fotohaecker/entries" target="_blank" rel="noopener noreferrer">
+        (click here for a demo)
+        <svg
+          aria-label=""
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          focusable="false"
+          x="0px"
+          y="0px"
+          viewbox="0 0 100 100"
+          width="15"
+          height="15">
+          <path d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+          <polygon points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+        </svg>
+      </a>, I built an image sharing plattform where you can upload and download any images free for
+                  use
+      <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">(CC Zero License)</a>. It was part of an university
+        project on the subject of www-programming. Once I feel like this project (its source code) is ready for public, I will
+        publish it on GitHub.
+    </p>
+    <p>
+      <strong>✨ New!</strong> I'm porting Fotohäcker to the Elixir/Phoenix Stack for better performance and scalability (also the code is a bit cleaner 😇). You can
+          find the new version and source code at <a href="https://fschoenf.uber.space/fh/">https://fschoenf.uber.space/fh/</a>.
+    </p>
+  </div>
+  <div class="md:flex gap-4 border-t pt-4 mt-4">
+    <div>
+      <p>Frontend:</p>
+      <ul class="technologies-used-list">
+        <li>Twig/Nunjucks</li>
+        <li>HTML5+CSS3</li>
+        <li>SCSS</li>
+        <li>Bootstrap</li>
+        <li>Critical CSS</li>
+        <li>Lazy Loading</li>
+        <li>Lighthouse</li>
+      </ul>
+    </div>
+    <div>
+      <p>Backend:</p>
+      <ul class="technologies-used-list">
+        <li>NodeJS</li>
+        <li>Express</li>
+        <li>SQLite</li>
+      </ul>
+    </div>
+    <div>
+      <p>PM & Testing:</p>
+      <ul class="technologies-used-list">
+        <li>git/gitflow</li>
+        <li>Jest</li>
+        <li>E2E Testing</li>
+        <li>Playwright</li>
+      </ul>
+    </div>
+  </div>
+</div>

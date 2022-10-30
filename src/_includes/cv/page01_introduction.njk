@@ -1,0 +1,88 @@
+<section class="a4 introduction">
+    <aside class="introduction__side">
+        <div class="space-y-6 max-w-sm md:max-w-none">
+            <div class="flex">
+                <h1 class="thick-heading">Frederik Schoenfeldt</h1>
+                <img class="block h-40 w-40 mx-auto rounded-full" src="{% getUrl me_image | resize({ width: 400 }) | webp %}" alt="photo of me"/>
+            </div>
+            <ul class="side__contact">
+                <li>
+                    <span class="material-icons !text-[20px]">home</span>
+                    {{ personal_address }}</li>
+                <li>
+                    <span class="material-icons !text-[20px]">phone</span>
+                    <a href="tel:{{ personal_phone | removeSpaces }}">
+                        {{ personal_phone }}
+                    </a>
+                </li>
+                <li>
+                    <span class="material-icons !text-[20px]">alternate_email</span>
+                    <a href="mailto:frederikschoenfeldt@gmail.com">frederikschoenfeldt@gmail.com</a>
+                </li>
+                <li>
+                    <span class="material-icons !text-[20px]">launch</span>
+                    <a href="https://fschoenfeldt.de/">fschoenfeldt.de</a>
+                </li>
+                <li>
+                    <span class="material-icons !text-[20px]">photo_camera</span>
+                    <a href="https://unsplash.com/fschoenfeldt">unsplash.com/fschoenfeldt</a>
+                </li>
+            </ul>
+        </div>
+        <div class="max-w-sm md:max-w-none">
+            <h2>Skills</h2>
+            <ul class="space-y-2">
+                <li>
+                        Frontend Entwicklung
+                        <div class="relative bg-gray-800 h-4 w-full">
+                        <div class="absolute top-0 h-4 w-full bg-gray-400"></div>
+                    </div>
+                </li>
+                <li>
+                        Testing &amp; Accessibility
+                        <div class="relative bg-gray-800 h-4 w-full">
+                        <div class="absolute top-0 h-4 w-11/12 bg-gray-400"></div>
+                    </div>
+                </li>
+                <li>
+                        Backend Entwicklung
+                        <div class="relative bg-gray-800 h-4 w-full">
+                        <div class="absolute top-0 h-4 w-9/12 bg-gray-400"></div>
+                    </div>
+                </li>
+                <li>
+                        Webdesign
+                        <div class="relative bg-gray-800 h-4 w-full">
+                        <div class="absolute top-0 h-4 w-9/12 bg-gray-400"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="space-y-2 max-w-sm md:max-w-none">
+            <h2>Berufliche Erfahrung</h2>
+            <ul class="space-y-2 text-sm">
+                <li>
+                    <h3>Heroic Recordings</h3>
+                    <p>Leading & Executive Designer</p>
+                </li>
+                <li>
+                    <h3>Freelancer</h3>
+                    <p>Frontendentwicklung, Konzeptentwicklung, Web- und Grafikdesign, Fotografie, SEO</p>
+                </li>
+                <li>
+                    <h3>Minijobs und Werkstudent</h3>
+                    <p>2016 - 2019 | u.a. ORION GmbH</p>
+                    <p>Webshop- und Frontendentwicklung, agiles Arbeiten nach Scrum in kleinen und mittleren Unternehmen</p>
+                </li>
+                <li>
+                    <h3>Elixir Fullstack Developer</h3>
+                    <p>2020 - heute | aidminutes GmbH</p>
+                    <p>Front- und Backendentwicklung mit Phoenix Framework</p>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div class="introduction__text">
+        <div class="prose prose-stone">{% include 'cv/intro.md' %}</div>
+    </div>
+</section>

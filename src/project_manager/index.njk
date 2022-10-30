@@ -1,0 +1,75 @@
+---
+title: Space Haven Manager
+description: describing the project Space Haven Manager and its technical details
+layout: layouts/base.njk
+---
+
+{% block head %}
+    <style>
+        body {
+            background: rgb(15, 23, 42);
+        }
+    </style>
+{% endblock %}
+
+<div id="project_manager" x-data="projectManager">
+    <canvas id="stars" class="fixed top-0 left-0 h-screen w-screen -z-20"></canvas>
+    {% set image = "src/images/spaceship.png" | sharp %}
+    <img x-show="spaceshipVisible"
+         class="absolute -z-10 md:max-w-3xl"
+         src="{% getUrl image | resize({ width: 1000 }) | webp %}"
+         aria-hidden="true"
+         x-init="setTimeout(() => {spaceshipVisible=true}, 200)"
+         x-transition
+         x-transition.duration.2000ms
+         x-transition:leave-end="transition_finished"/>
+
+    <h1 class="self-end z-10">
+        Space Haven Manager</h1>
+    <div class="self-start z-10">
+        <p>
+            The game Space Haven is a 2D isometric space exploration game, where you can also trade with different factions.
+            With Space Haven Manager
+            <a class="external" href="{{ "/manager" | url }}" target="_blank" rel="noopener noreferrer">
+      (click here for a demo)
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        ariahidden="true"
+        focusable="false"
+        x="0px"
+        y="0px"
+        viewbox="0 0 100 100"
+        width="15"
+        height="15">
+                    <path d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+                    <polygon points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+                </svg>
+            </a>, I build a small web application that allows you to manage trading prices. From a technical perspective, AlpineJS is used as a thin layer around events and state management. For persistance, I'm using the Local Storage API. Testing is done via playwright and some automatic accessibility checks are done via axe-core. The tests are run on every push to the repository via GitHub Actions, this ensures consistent quality.
+        </p>
+        <div class="md:flex gap-4 border-t border-cyan-200 pt-4 mt-4">
+            <div>
+                <p>Frontend:</p>
+                <ul class="technologies-used-list">
+                    <li>Eleventy</li>
+                    <li>Twig/Nunjucks</li>
+                    <li>HTML5+CSS3</li>
+                    <li>SCSS</li>
+                    <li>TailwindCSS</li>
+                    <li>AlpineJS</li>
+                    <li>Local Storage API</li>
+                </ul>
+            </div>
+            <div>
+                <p>PM & Testing:</p>
+                <ul class="technologies-used-list">
+                    <li>git/gitflow</li>
+                    <li>Jest</li>
+                    <li>E2E Testing</li>
+                    <li>Playwright</li>
+                    <li>axe-core</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

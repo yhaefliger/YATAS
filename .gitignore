@@ -18,6 +18,7 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
+.envrc-secret
 
 # Mac
 .DS_Store
@@ -30,3 +31,13 @@ _site
 
 #Generated hash data
 _data/hash.json
+
+# e2e
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# regenerating screenshots
+.pnpm-store
+
+src/images/me

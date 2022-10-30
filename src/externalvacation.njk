@@ -1,0 +1,19 @@
+---
+title: Vacation 🚀
+layout: layouts/minimal.njk
+eleventyExcludeFromCollections: true
+---
+
+{% set external_vacation_image = "src/images/external_vacation.jpg" | sharp %}
+<div class="h-screen w-screen flex items-center justify-center" x-data="vacation">
+    <div class="max-w-xl text-center p-4 space-y-4">
+        <h1>👒☀️😎🏝️🏖️🌄</h1>
+        <img src="{% getUrl external_vacation_image | resize({ width: 600 }) | webp %}"/>
+        <h1
+            x-text="format('{{ external_vacation_date }}')"
+            class="thick-heading"
+            style=" background-image: -webkit-gradient( linear, left top, right top, from(#dfdd6d), color-stop(#74b2e9), to(#7da6f4)
+                ); background-image: linear-gradient(33deg, #dfdd6d, #74b2e9, #7da6f4); -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; "></h1>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8"/>
+    {% if description %}
+      <meta name="description" content="{{ description }}"/>
+    {% endif %}
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+    <meta name="generator" content="Eleventy"/>
+    <link rel="stylesheet" href="{{ hash['/css/styles.css'] | url }}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {% include 'favicons.njk' %}
+    <script defer src="{{ hash['/js/app_manager.js'] | url }}"></script>
+    {# TODO: self host chart.js #}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {% block head %}{% endblock %}
+  </head>
+  <body class="antialiased">
+    <div id="manager" x-data="manager" x-effect="$store.manager.persist($store.manager.ressources)">
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+    </div>
+  </body>
+</html>

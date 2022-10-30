@@ -1,0 +1,128 @@
+@page {
+  margin: 0;
+}
+
+/* merriweather-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("/fonts/merriweather/merriweather-v30-latin-regular.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/fonts/merriweather/merriweather-v30-latin-regular.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* merriweather-italic - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Merriweather";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""),
+    url("/fonts/merriweather/merriweather-v30-latin-italic.woff2")
+      format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/fonts/merriweather/merriweather-v30-latin-italic.woff")
+      format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* merriweather-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+    url("/fonts/merriweather/merriweather-v30-latin-700.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/fonts/merriweather/merriweather-v30-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* anton-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("/fonts/anton/anton-v23-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/fonts/anton/anton-v23-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* space-mono-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("/fonts/spacemono/space-mono-v11-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/fonts/spacemono/space-mono-v11-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* space-mono-italic - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Space Mono";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""),
+    url("/fonts/spacemono/space-mono-v11-latin-italic.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/fonts/spacemono/space-mono-v11-latin-italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* fallback */
+/* source: https://fonts.googleapis.com/icon?family=Material+Icons */
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("/fonts/materialicons/MaterialIcons-Regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/fonts/materialicons/MaterialIcons-Regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  @apply font-serif text-gray-800;
+}
+h1 {
+  @apply font-heading text-4xl;
+}
+a {
+  @apply text-blue-700 underline underline-offset-4 hover:text-blue-900;
+
+  &.external {
+    @apply inline-flex items-center gap-0.5;
+    svg {
+      @apply inline-block fill-blue-700;
+    }
+    &:hover {
+      svg {
+        @apply fill-blue-900;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+#cv {
+  @apply flex flex-wrap bg-gray-700 shadow-xl 
+         print:block print:gap-0 print:space-y-0 print:bg-transparent print:!p-0
+         print:shadow-none md:gap-10 md:p-10;
+  * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  h2 {
+    @apply text-xl font-bold;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  .a4 {
+    @screen canDisplayA4 {
+      width: 21cm;
+      height: 29.7cm;
+    }
+    @media print {
+      width: 21cm;
+      height: 29.7cm;
+    }
+    @apply bg-white;
+  }
+  .thick-heading {
+    @apply text-5xl;
+  }
+  .introduction {
+    @apply grid w-full;
+    @screen md {
+      grid-template-columns: 8.3cm 1fr;
+      width: 21cm;
+    }
+    @media print {
+      grid-template-columns: 8.3cm 1fr;
+      width: 21cm;
+    }
+    &__side {
+      @apply flex flex-col gap-y-4 bg-gray-900 p-6 print:p-4 md:p-4 canDisplayA4:justify-between;
+      * {
+        @apply text-white;
+      }
+      .side__contact {
+        @apply space-y-1;
+        li {
+          @apply flex items-center gap-2 text-white;
+          .icon {
+            @apply h-4 w-4 rounded-full bg-gray-100;
+          }
+        }
+      }
+    }
+    &__text {
+      @apply h-full p-6 print:p-4 md:p-4 md:pb-0;
+    }
+  }
+  .projects {
+    @apply grid content-between items-center;
+    grid-template-rows: auto 1fr 1fr 1fr auto;
+    .project {
+      @apply space-y-4 px-4 py-2;
+      &__header {
+        @apply space-y-1;
+      }
+      &__info {
+        @apply space-x-6 space-y-6 print:flex print:space-y-0 md:flex md:space-y-0;
+      }
+    }
+  }
+}
