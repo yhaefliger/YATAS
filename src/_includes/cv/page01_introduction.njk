@@ -1,11 +1,11 @@
 <section class="a4 introduction">
     <aside class="introduction__side">
-        <div class="space-y-6 max-w-sm md:max-w-none">
+        <div class="space-y-4 max-w-sm md:max-w-none">
             <div class="flex">
                 <h1 class="thick-heading">Frederik Schoenfeldt</h1>
                 <img class="block h-40 w-40 mx-auto rounded-full" src="{% getUrl me_image | resize({ width: 400 }) | webp %}" alt="photo of me"/>
             </div>
-            <ul class="side__contact">
+            <ul class="introduction__side__contact">
                 <li>
                     <span class="material-icons !text-[20px]">home</span>
                     {{ personal_address }}</li>
@@ -31,53 +31,50 @@
         </div>
         <div class="max-w-sm md:max-w-none">
             <h2>Skills</h2>
-            <ul class="space-y-2">
+            <ul class="introduction__side__skills">
                 <li>
                         Frontend Entwicklung
-                        <div class="relative bg-gray-800 h-4 w-full">
-                        <div class="absolute top-0 h-4 w-full bg-gray-400"></div>
+                        <div class="skill_base">
+                        <div class="skill_top w-full"></div>
                     </div>
                 </li>
                 <li>
                         Testing &amp; Accessibility
-                        <div class="relative bg-gray-800 h-4 w-full">
-                        <div class="absolute top-0 h-4 w-11/12 bg-gray-400"></div>
+                        <div class="skill_base">
+                        <div class="skill_top w-11/12"></div>
                     </div>
                 </li>
                 <li>
                         Backend Entwicklung
-                        <div class="relative bg-gray-800 h-4 w-full">
-                        <div class="absolute top-0 h-4 w-9/12 bg-gray-400"></div>
+                        <div class="skill_base">
+                        <div class="skill_top w-9/12"></div>
                     </div>
                 </li>
                 <li>
                         Webdesign
-                        <div class="relative bg-gray-800 h-4 w-full">
-                        <div class="absolute top-0 h-4 w-9/12 bg-gray-400"></div>
+                        <div class="skill_base">
+                        <div class="skill_top w-9/12"></div>
                     </div>
                 </li>
             </ul>
         </div>
         <div class="space-y-2 max-w-sm md:max-w-none">
             <h2>Berufliche Erfahrung</h2>
-            <ul class="space-y-2 text-sm">
+            <ul class="space-y-4 text-sm">
                 <li>
-                    <h3>Heroic Recordings</h3>
-                    <p>Leading & Executive Designer</p>
+                    <h3>Leading & Executive Designer</h3>
+                    <p>2012 - 2015 | Heroic Recordings</p>
+                    <p>Grafik- und Webdesign, Erstellung von On Demand Inhalten, Leitung des Design- und Entwicklungsteams</p>
                 </li>
                 <li>
-                    <h3>Freelancer</h3>
-                    <p>Frontendentwicklung, Konzeptentwicklung, Web- und Grafikdesign, Fotografie, SEO</p>
+                    <h3>Freelance & Werkstudent</h3>
+                    <p>2016 - 2020 | u.a. ORION GmbH</p>
+                    <p>Webshop- und Frontendentwicklung, agiles Arbeiten nach Scrum in kleinen und mittleren Unternehmen. Web- und Grafikdesign, Fotografie & SEO</p>
                 </li>
                 <li>
-                    <h3>Minijobs und Werkstudent</h3>
-                    <p>2016 - 2019 | u.a. ORION GmbH</p>
-                    <p>Webshop- und Frontendentwicklung, agiles Arbeiten nach Scrum in kleinen und mittleren Unternehmen</p>
-                </li>
-                <li>
-                    <h3>Elixir Fullstack Developer</h3>
+                    <h3>Lead Fullstack Developer</h3>
                     <p>2020 - heute | aidminutes GmbH</p>
-                    <p>Front- und Backendentwicklung mit Phoenix Framework</p>
+                    <p>Front- und Backendentwicklung mit Phoenix Framework, React & React Native – E2E-Testing inkl. CI. Verantwortlich für kleinere Projektteams, Einstellung und Einarbeitung von neuen Mitarbeiter:innen</p>
                 </li>
             </ul>
         </div>

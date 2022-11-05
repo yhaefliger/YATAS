@@ -38,11 +38,11 @@
       width: 21cm;
     }
     &__side {
-      @apply flex flex-col gap-y-4 bg-gray-900 p-6 print:p-4 md:p-4 canDisplayA4:justify-between;
+      @apply flex flex-col gap-y-4 bg-gray-900 p-6 print:p-4 md:p-4;
       * {
         @apply text-white;
       }
-      .side__contact {
+      &__contact {
         @apply space-y-1;
         li {
           @apply flex items-center gap-2 text-white;
@@ -51,16 +51,30 @@
           }
         }
       }
+      &__skills {
+        @apply space-y-2;
+
+        .skill_base,
+        .skill_top {
+          @apply h-3;
+        }
+        .skill_base {
+          @apply relative w-full bg-gray-700;
+        }
+        .skill_top {
+          @apply absolute top-0 bg-gray-400;
+        }
+      }
     }
     &__text {
       @apply h-full p-6 print:p-4 md:p-4 md:pb-0;
     }
   }
   .projects {
-    @apply grid content-between items-center;
+    @apply grid;
     grid-template-rows: auto 1fr 1fr 1fr auto;
     .project {
-      @apply space-y-4 px-4 py-2;
+      @apply h-full space-y-4 px-4 py-2;
       &__header {
         @apply space-y-1;
       }
