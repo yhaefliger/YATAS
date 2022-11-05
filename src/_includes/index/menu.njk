@@ -3,9 +3,9 @@
         <p>menu</p>
         <ul class="menu">
             <li class="col-span-5">
-                <a class="" target="_blank" href="https://blog.fschoenfeldt.de/" rel="noopener noreferrer" title="my blog">
+                <a class="no-underline" target="_blank" href="https://blog.fschoenfeldt.de/" rel="noopener noreferrer" title="my blog">
                     blog
-                    <div aria-hidden="true" class="external fill-white">blog.fschoenfeldt.de
+                    <div aria-hidden="true" class="external fill-white underline">blog.fschoenfeldt.de
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             ariahidden="true"
@@ -22,9 +22,9 @@
                 </a>
             </li>
             <li class="col-span-2">
-                <a class="" href="mailto:frederikschoenfeldt@gmail.com" title="contact me via email">
+                <a class="no-underline" href="mailto:frederikschoenfeldt@gmail.com" title="contact me via email">
                     hello
-                    <div aria-hidden="true">frederikschoenfeldt@gmail.com</div>
+                    <div class="underline" aria-hidden="true">frederikschoenfeldt@gmail.com</div>
                 </a>
             </li>
             <li class="projects col-span-5 relative">
@@ -33,23 +33,23 @@
                     <div class="relative">
                         {% set image = "src/images/fotohaecker_bg.jpg" | sharp %}
                         <img class="absolute top-0 object-cover h-full w-full rounded" src="{% getUrl image | resize({ width: 500 }) | webp %}" aria-hidden="true"/>
-                        <a class="relative z-10" href="{{ "/fotohaecker" | url }}" title="learn more">
+                        <a class="relative z-10 no-underline" href="{{ "/fotohaecker" | url }}" title="learn more">
                             <span class="gray-bg">fotohäcker</span>
-                            <div class="gray-bg" aria-hidden="true">learn more</div>
+                            <div class="gray-bg underline" aria-hidden="true">learn more</div>
                         </a>
                     </div>
                     <div class="relative bg-slate-800 border border-cyan-200">
-                        <a class="relative z-10" href="{{ "/project_manager" | url }}" title="learn more">
+                        <a class="relative z-10 no-underline" href="{{ "/project_manager" | url }}" title="learn more">
                             <span class="w-max text-cyan-200">space haven manager</span>
-                            <div class="w-max text-cyan-200" aria-hidden="true">learn more</div>
+                            <div class="w-max text-cyan-200 underline" aria-hidden="true">learn more</div>
                         </a>
                     </div>
                 </div>
             </li>
             <li class="col-span-8">
-                <a class="" target="_blank" href="https://unsplash.com/@fschoenfeldt" rel="noopener noreferrer" title="my photos">
+                <a class="no-underline" target="_blank" href="https://unsplash.com/@fschoenfeldt" rel="noopener noreferrer" title="my photos">
                     photography
-                    <div class="external fill-white" aria-hidden="true">gallery
+                    <div class="external fill-white underline" aria-hidden="true">gallery
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             ariahidden="true"
@@ -67,13 +67,13 @@
             </li>
             <li class="col-span-4">
                 <a
-                    class=""
+                    class="no-underline"
                     target="_blank"
                     href="https://soundcloud.com/frederikschoenfeldt"
                     rel="noopener noreferrer"
                     title="my tunes">
                     tunes
-                    <div class="external fill-white" aria-hidden="true">soundcloud
+                    <div class="external fill-white underline" aria-hidden="true">soundcloud
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             ariahidden="true"
