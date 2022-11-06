@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
     "personal_phone",
     process.env.PERSONAL_PHONE
   );
+  eleventyConfig.addNunjucksGlobal("personal_mail", process.env.PERSONAL_MAIL);
   eleventyConfig.addNunjucksGlobal(
     "personal_actual_vacation_date",
     process.env.PERSONAL_ACTUAL_VACATION_DATE
@@ -89,8 +90,8 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
-  eleventyConfig.addFilter("removeSpaces", function(string) {
-    return string.replace(/\s/g, '');
+  eleventyConfig.addFilter("removeSpaces", function (string) {
+    return string.replace(/\s/g, "");
   });
 
   return {
