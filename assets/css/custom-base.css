@@ -126,3 +126,14 @@ a {
     }
   }
 }
+
+#a4doc {
+  .a4 {
+    width: 21cm;
+    height: 29.7cm;
+    margin-top: 1.69cm;
+    margin-bottom: 1.69cm;
+    margin-left: 2.41cm;
+    padding-right: 2cm;
+  }
+}

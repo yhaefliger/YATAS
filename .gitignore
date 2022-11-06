@@ -41,3 +41,5 @@ _data/hash.json
 .pnpm-store
 
 src/images/me
+src/a4docs/*.md
+!src/a4docs/example.md

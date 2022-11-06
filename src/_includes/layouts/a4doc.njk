@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ title }} – Frederik Schönfeldt</title>
+        <meta charset="UTF-8"/>
+        {% if description %}
+            <meta name="description" content="{{ description }}"/>
+        {% endif %}
+        <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+        <meta name="generator" content="Eleventy"/>
+        <link rel="stylesheet" href="{{ hash['/css/styles.css'] | url }}"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        {% include 'favicons.njk' %}
+        {% block head %}{% endblock %}
+    </head>
+    <body class="antialiased">
+        <main id="a4doc">
+            <div class="a4">
+                <div class="space-y-6">
+                    <div class="flex flex-col items-end">
+                        <p class="font-bold">{{ me_name }}</p>
+                        <p>{{ me_address }}</p>
+                        <p>{{me_zip}}
+                            {{ me_city }}</p>
+                        <a href="tel:{{ personal_phone | removeSpaces }}">
+                            {{ personal_phone }}
+                        </a>
+                        <a href="mailto:{{ personal_mail }}">{{ personal_mail }}</a>
+                    </div>
+                    <div>
+                        <p class="font-bold">{{ receipt_company }}</p>
+                        <p>{{ receipt_name }}</p>
+                        <p>{{ receipt_address }}</p>
+                        <p>{{ receipt_city }}</p>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <p>{{ me_city }}, {{ page.date | date  }}</p>
+                    </div>
+                    <div class="prose prose-stone text-lg">
+                        {% block content %}
+                            {{ content | safe }}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

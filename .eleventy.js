@@ -3,6 +3,7 @@ const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const sharpPlugin = require("eleventy-plugin-sharp");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setUseGitIgnore(false);
   /**
    * Upgrade helper
    * Uncomment if you need help upgrading to new major version.
@@ -92,6 +93,19 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("removeSpaces", function (string) {
     return string.replace(/\s/g, "");
+  });
+
+  /**
+   * filter for displaying the current date in the following format:
+   *
+   * DD. MMMM YYYY
+   */
+  eleventyConfig.addFilter("date", function (date) {
+    return new Date(date).toLocaleDateString("de-DE", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    });
   });
 
   return {

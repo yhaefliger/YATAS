@@ -20,6 +20,10 @@ Minified production build
 pnpm build
 ```
 
+## Custom A4 Docs
+
+You can generate custom A4 PDFs by putting markdown files under the `src/a4docs` directy, see [example](src/a4docs/example.md). Run the server and open `http://localhost:8080/a4docs/example` to see the result.
+
 ## E2E Tests
 
 ```bash
