@@ -8,6 +8,10 @@ test.describe("index/home page", () => {
     await page.waitForLoadState("networkidle");
   });
 
+  test("matches snapshop", async ({ page }) => {
+    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
+  });
+
   test("should not have any automatically detectable accessibility issues", async ({
     page,
   }) => {

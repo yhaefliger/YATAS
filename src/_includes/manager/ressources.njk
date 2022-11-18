@@ -17,26 +17,40 @@
                                 return `show information for ${r.name}`
                             }
                             ">
-                        <div class="py-2 text-center" :class="{ 'mt-auto' : !$store.manager.changeVisibility && r.priceHistory.length}">
+                        <div class="py-2 space-y-2 text-center" :class="{ 'mt-auto' : !$store.manager.changeVisibility && r.priceHistory.length}">
                             <img alt="" class="inline" :src="r.path"/>
                             <div x-text="r.name" aria-hidden="true"></div>
                         </div>
                         <template x-if="r.priceHistory.length && !$store.manager.changeVisibility" x-data="{logExpanded: false}">
                             <ul class="ressources__item__priceinfo">
-                                <li class="w-full flex justify-between items-center px-2 py-0.5">
+                                <li class="w-full flex justify-between items-center px-0.5 md:px-2 py-0.5 gap-x-2">
                                     <div class="sr-only" x-text="`price information for ${r.name}`"></div>
                                     <div :aria-label="r.min && `minimum price: ${r.min}`">
-                                        <span aria-hidden="true" 
-                                              x-text="r.min && `↓${r.min}`"></span>
+                                        <div aria-hidden="true" 
+                                             x-show="r.min"
+                                             class="priceinfo__values"
+                                             >
+                                            <img alt="" class="" src="/img/arrow_downward.svg"/>
+                                            <span x-text="r.min && `${r.min}`"></span>
+                                        </div>
                                     </div>
                                     <div :aria-label="r.average && `average price: ${r.average}`">
-                                        <span aria-hidden="true"
-                                              x-text="r.average && `⌀${r.average}`"></span>
+                                        <div aria-hidden="true"
+                                             x-show="r.average"
+                                             class="priceinfo__values"
+                                             >
+                                            <img alt="" class="" src="/img/insights.svg"/>
+                                            <span x-text="r.average && `${r.average}`"></span>
+                                        </div>
                                     </div>
                                     <div :aria-label="r.max && `maximum price: ${r.max}`">
-                                        <span aria-hidden="true"
-                                              class="!text-amber-200 text-lg font-bold" 
-                                              x-text="r.max && `↑${r.max}`"></span>
+                                        <div aria-hidden="true"
+                                             x-show="r.max"
+                                             class="priceinfo__values"
+                                             >
+                                            <img alt="" class="" src="/img/arrow_upward.svg"/>
+                                            <span class="!text-amber-200 font-bold" x-text="r.max && `${r.max}`"></span>
+                                        </div>
                                     </div>
                                 </li>
                                 <template x-if="logExpanded">
