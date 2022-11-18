@@ -91,8 +91,14 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
-  eleventyConfig.addFilter("removeSpaces", function (string) {
-    return string.replace(/\s/g, "");
+  eleventyConfig.addFilter("removeSpaces", function (input) {
+    console.log("input!");
+    console.log(input);
+    if (input) {
+      return input.replace(/\s/g, "");
+    } else {
+      return "not found!";
+    }
   });
 
   /**
