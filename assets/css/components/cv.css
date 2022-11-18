@@ -18,10 +18,10 @@
       width: 21cm;
       height: 29.7cm;
     }
-    @media print {
+    /* @media print {
       width: 21cm;
       height: 29.7cm;
-    }
+    } */
     @apply bg-white;
   }
   .thick-heading {
