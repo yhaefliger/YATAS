@@ -25,23 +25,23 @@
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-upgrade-help": "^1.0.1",
     "@axe-core/playwright": "4.5.2",
-    "@playwright/test": "1.28.0",
+    "@playwright/test": "1.28.1",
     "@tailwindcss/typography": "^0.5.8",
     "alpinejs": "^3.10.5",
     "autoprefixer": "^10.4.13",
     "chart.js": "^3.9.1",
-    "concurrently": "^7.5.0",
+    "concurrently": "7.6.0",
     "del-cli": "^5.0.0",
     "eleventy-plugin-sharp": "^0.1.1",
-    "esbuild": "0.15.14",
+    "esbuild": "0.15.16",
     "html-minifier": "^4.0.0",
     "md5": "^2.3.0",
     "postcss": "^8.4.19",
     "postcss-import": "^15.0.0",
-    "prettier": "^2.7.1",
+    "prettier": "2.8.0",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.2.4",
-    "vanilla-cookieconsent": "^2.8.8"
+    "vanilla-cookieconsent": "2.8.9"
   },
   "dependencies": {
     "debounce": "^1.2.1"
