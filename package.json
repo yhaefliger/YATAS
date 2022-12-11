@@ -11,7 +11,9 @@
     "build-css": "npx tailwindcss --postcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
     "build-js": "npx esbuild ./assets/js/app.js ./assets/js/app_vacation.js ./assets/js/app_manager.js --outdir=./_site/js/ --bundle --target=es2018 --minify",
     "build": "NODE_ENV=production concurrently \"npm:test --testNamePattern print\" \"npm:build-*\" && node hash && ELEVENTY_ENV=production eleventy",
-    "test": "npx playwright test"
+    "test:unit": "npx playwright test -c assets/js/",
+    "test:e2e": "npx playwright test",
+    "test": "pnpm test:unit && pnpm test:e2e"
   },
   "keywords": [
     "eleventy",
