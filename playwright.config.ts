@@ -12,7 +12,7 @@ import { devices } from "@playwright/test";
  */
 const config: PlaywrightTestConfig = {
   testDir: "./tests",
-  // TODO: prints could be setup via a different file to avoid this kind of hacks
+  // HACK: prints could be setup via a different file to avoid this kind of hacks
   testIgnore:
     process.env.NODE_ENV === "production" ? undefined : "**print.spec.ts",
   /* Maximum time one test can run for. */

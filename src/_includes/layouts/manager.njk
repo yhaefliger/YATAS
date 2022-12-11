@@ -14,8 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {% include 'favicons.njk' %}
     <script defer src="{{ hash['/js/app_manager.js'] | url }}"></script>
-    {# TODO: self host chart.js #}
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     {% block head %}{% endblock %}
   </head>
   <body class="antialiased">

@@ -111,18 +111,10 @@ export const store = {
       this.ressource = ressource;
       // remember last focused element
       this.$store.manager.lastFocusedElement = document.activeElement;
-      // TODO remove hidden name input
-      this.$refs.name.value = name;
       this.$refs.input.focus();
     });
   },
-  handleModal(e) {
-    console.log({ e });
-    console.log(this.$refs.input.value);
-    console.log(this.$refs.name.value);
-
-    // TODO remove hidden name input
-    const name = this.$refs.name.value;
+  submitAddPriceModal({ detail: { name } }) {
     const value = this.$refs.input.value;
 
     const newRessources = addPriceHistory(this.$store.manager, name, {
@@ -173,10 +165,3 @@ export const store = {
     }
   },
 };
-
-export const data = () => ({
-  /* handleModal: ({ detail: { name } }) => {
-    visible = true;
-    console.log(name);
-  }, */
-});

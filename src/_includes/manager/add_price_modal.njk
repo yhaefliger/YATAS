@@ -4,6 +4,7 @@
      x-cloak
      x-show="$store.manager.modalVisible" 
      @showaddpricemodal.window="$store.manager.showAddPriceModal"
+     @submitaddpricemodal="$store.manager.submitAddPriceModal"
      role="dialog"
      aria-modal="true"
      aria-labelledby="addPriceModalLabel"
@@ -91,13 +92,11 @@
             </div>
         </div>
 
-        <form class="flex flex-col space-y-4" @submit.prevent="$store.manager.handleModal">
+        <form class="flex flex-col space-y-4" @submit.prevent="$dispatch('submitaddpricemodal', {name: ressource.name})">
             <label class="text-cyan-200 text-lg" 
                        for="number_input">
                        new price:
             </label>
-            {# TODO remove hidden name input #}
-            <input x-ref="name" type="text" hidden/>
             <input class="text-3xl bg-transparent border border-cyan-200
                             bg-slate-700 p-2 text-cyan-200 text-center" 
                        x-ref="input" 
