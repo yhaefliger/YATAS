@@ -11,8 +11,8 @@
     "build-css": "npx tailwindcss --postcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
     "build-js": "npx esbuild ./assets/js/app.js ./assets/js/app_vacation.js ./assets/js/app_manager.js --outdir=./_site/js/ --bundle --target=es2018 --minify",
     "prebuild": "NODE_ENV=production npx playwright test ./tests/cv.print.spec.ts && npm run clean",
-    "build": "NODE_ENV=production concurrently \"npm:build-*\" \"ELEVENTY_ENV=production eleventy\"",
-    "postbuild": "node hash",
+    "build": "NODE_ENV=production concurrently \"npm:build-*\"",
+    "postbuild": "node hash && ELEVENTY_ENV=production eleventy",
     "test:unit": "npx playwright test -c assets/js/",
     "test:e2e": "npx playwright test",
     "test": "pnpm test:unit && pnpm test:e2e"
