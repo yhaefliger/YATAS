@@ -10,7 +10,9 @@
     "start:e2e": "NODE_ENV=development concurrently \"node hash\"  \"ELEVENTY_ENV=development eleventy --serve --port 8081\"  \"npm:watch-*\"",
     "build-css": "npx tailwindcss --postcss -i ./assets/css/styles.css -o ./_site/css/styles.css --minify",
     "build-js": "npx esbuild ./assets/js/app.js ./assets/js/app_vacation.js ./assets/js/app_manager.js --outdir=./_site/js/ --bundle --target=es2018 --minify",
-    "build": "NODE_ENV=production concurrently \"npm:test --testNamePattern print\" \"npm:build-*\" && node hash && ELEVENTY_ENV=production eleventy",
+    "prebuild": "NODE_ENV=production npx playwright test ./tests/cv.print.spec.ts && npm run clean",
+    "build": "NODE_ENV=production concurrently \"npm:build-*\" \"ELEVENTY_ENV=production eleventy\"",
+    "postbuild": "node hash",
     "test:unit": "npx playwright test -c assets/js/",
     "test:e2e": "npx playwright test",
     "test": "pnpm test:unit && pnpm test:e2e"
