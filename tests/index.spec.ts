@@ -8,13 +8,26 @@ test.describe("index/home page", () => {
     await page.waitForLoadState("networkidle");
   });
 
-  test("matches snapshop", async ({ page }) => {
+  test("matches snapshot", async ({ page }) => {
+    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
+  });
+
+  test("matches snapshot in dark mode", async ({ page }) => {
+    await page.emulateMedia({ colorScheme: "dark" });
     expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
   });
 
   test("should not have any automatically detectable accessibility issues", async ({
     page,
   }) => {
+    const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+    expect(accessibilityScanResults.violations).toEqual([]);
+  });
+
+  test("should not have any automatically detectable accessibility issues in dark mode", async ({
+    page,
+  }) => {
+    await page.emulateMedia({ colorScheme: "dark" });
     const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
     expect(accessibilityScanResults.violations).toEqual([]);
   });

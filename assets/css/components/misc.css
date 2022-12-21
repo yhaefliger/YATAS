@@ -16,7 +16,7 @@
     @apply w-max bg-gray-800 text-white;
   }
   > li {
-    @apply rounded bg-gray-800 text-white transition-opacity hover:opacity-90;
+    @apply rounded bg-gray-800 text-white transition-opacity hover:opacity-90 dark:hover:bg-gray-700 dark:hover:opacity-100;
     &:hover {
       a div {
         @apply underline;

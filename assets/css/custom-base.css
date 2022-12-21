@@ -105,14 +105,18 @@
   -webkit-font-smoothing: antialiased;
 }
 
+body {
+  @apply bg-white dark:bg-gray-900;
+}
+
 * {
-  @apply font-serif text-gray-800;
+  @apply font-serif text-gray-800 dark:text-gray-100;
 }
 h1 {
   @apply font-heading text-4xl;
 }
 a {
-  @apply text-blue-700 underline underline-offset-4 hover:text-blue-900;
+  @apply text-blue-700 underline underline-offset-4 hover:text-blue-900 hover:dark:text-blue-300;
 
   &.external {
     @apply inline-flex items-center gap-0.5;

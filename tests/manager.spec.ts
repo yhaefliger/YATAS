@@ -13,7 +13,7 @@ test.describe.parallel("manager", async () => {
     expect(await page.title()).toContain("Space Haven Manager");
   });
 
-  test("index matches snapshop", async ({ page }) => {
+  test("index matches snapshot", async ({ page }) => {
     // TODO: as we don't have a custom font enabled for manager yet, this looks different on all machines...
     expect(await page.screenshot()).toMatchSnapshot();
   });

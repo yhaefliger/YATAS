@@ -17,6 +17,11 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
+  @media (prefers-color-scheme: dark) {
+    background-image: none;
+    -webkit-text-fill-color: unset;
+  }
+
   @apply pt-6 sm:text-10xl lg:text-[12rem] xl:text-[17rem];
 }
 .technologies-used-list {

@@ -68,6 +68,9 @@
     }
     &__text {
       @apply h-full p-6 print:p-4 md:p-4 md:pb-0;
+      * {
+        @apply text-gray-800;
+      }
     }
   }
   .projects {
@@ -75,6 +78,12 @@
     grid-template-rows: auto 1fr 1fr 1fr auto;
     .project {
       @apply h-full space-y-4 px-4 py-2;
+      p,
+      h2,
+      ul,
+      li {
+        @apply !text-gray-800;
+      }
       &__header {
         @apply space-y-1;
       }
