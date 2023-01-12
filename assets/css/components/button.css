@@ -1,0 +1,20 @@
+.btn {
+  @apply rounded border border-gray-200 bg-gray-100 px-2 py-1 font-sans text-sm transition-all;
+  &:hover {
+    @apply bg-gray-300;
+  }
+  &:focus {
+    @apply ring-1;
+  }
+
+  &--lg {
+    @apply rounded-lg px-4 py-2 text-base;
+  }
+
+  &--primary {
+    @apply bg-cyan-700 text-white;
+  }
+  &--primary:hover {
+    @apply bg-cyan-800;
+  }
+}

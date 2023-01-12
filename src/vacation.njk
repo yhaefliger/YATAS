@@ -1,25 +1,86 @@
 ---
 title: Vacation 🚀
-layout: layouts/minimal.njk
+layout: layouts/vacation.njk
 eleventyExcludeFromCollections: true
 ---
 
 {% set vacation_image = "src/images/vacation.jpg" | sharp %}
-<div class="h-screen w-screen flex items-center justify-center" x-data="vacation">
-    <div class="max-w-xl text-center p-4 space-y-4">
-        <h1>👒☀️😎🏝️🏖️🌄</h1>
-        <img src="{% getUrl vacation_image | resize({ width: 600 }) | webp %}"/>
-        <h1
-            x-text="`Bis Urlaubsbeginn: ${format('{{ personal_actual_vacation_date }}')}`"
+<main class="h-screen w-screen flex items-center justify-center" 
+     @submitvacationform="$store.vacation.submitVactionForm">
+    <div x-ref="test"></div>
+    <template x-if="$store.vacation.editMode">
+        <form @submit.prevent="$dispatch('submitvacationform')" 
+              class="max-w-xl space-y-4 border rounded shadow p-4"
+              data-testid="vacationForm">
+            <h1 class="thick-heading text-3xl pb-4">
+                📝 Eigenen Urlaub setzen
+            </h1>
+            <p>
+                Mithilfe dieses Formulars kannst du deinen eigenen Urlaub setzen. Anschließend erhälst du einen Link, den du teilen kannst:
+            </p>
+            <div class="space-y-2 p-4 bg-gray-100 -m-4 border-y">
+                <ol class="list-decimal ml-4">
+                    <li>
+                        <strong class="block">Urlaubstag auswählen</strong>
+                        <label for="date">Urlaubsdatum</label>
+                        <input class="block bg-gray-200 text-xl"
+                               type="date"
+                               name="date"
+                               id="date"
+                               x-ref="inputdate"
+                               data-testid="vacationDate"
+                               required>
+                    </li>
+                    <li class="hidden">
+                        <strong class="block">Hintergrundbild auswählen (optional)</strong>
+                        <div class="flex space-x-4 bg-amber-50 border p-4 rounded">
+                            <div>🔐</div>
+                            <div>Dein Hintergrundbild wird nur auf deinem Gerät gespeichert.</div>
+                            <input class="block"
+                                   type="file"
+                                   name="image"
+                                   id="image"
+                                   accept="image/*"
+                                   x-ref="inputimage">
+                        </div>
+                    </li>
+                </ol>
+                <button data-testid="submitButton" class="btn btn--lg btn--primary">Speichern</button>
+                <template x-if="$store.vacation.generatedLink">
+                    <div data-testid="result">
+                        Dein Link: 
+                        <a :href="$store.vacation.generatedLink" 
+                           target="_blank" rel="noopener noreferrer" 
+                           x-text="$store.vacation.generatedLink"></a>
+                    </div>
+                </template>
+            </div>
+        </form>
+    </template>
+    <template x-if="!$store.vacation.editMode">
+        <div class="max-w-xl text-center p-4 space-y-4">
+            <h1>👒☀️😎🏝️🏖️🌄</h1>
+            <img alt="photo of vacation place" src="{% getUrl vacation_image | resize({ width: 600 }) | webp %}"/>
+            <h1
+            hidden
+            x-text="`Bis Urlaubsbeginn: ${$store.vacation.format($store.vacation.date)}`"
             class="thick-heading text-3xl italic"
             style=" background-image: -webkit-gradient( linear, left top, right top, from(#cada33), color-stop(#5896f6), to(#347884)
                 ); background-image: linear-gradient(33deg, #cada33, #5896f6, #347884); -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent; "></h1>
-        <h1
-            x-text="format('{{ personal_vacation_date }}')"
-            class="thick-heading"
+            <h1
+            x-text="$store.vacation.format($store.vacation.date)"
+            class="thick-heading text-9xl"
             style=" background-image: -webkit-gradient( linear, left top, right top, from(#cada33), color-stop(#5896f6), to(#347884)
                 ); background-image: linear-gradient(33deg, #cada33, #5896f6, #347884); -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent; "></h1>
-    </div>
-</div>
+
+            <button @click="$store.vacation.editMode = true" 
+                    class="btn text-xs absolute bottom-4 right-4 lg:bottom-2 lg:right-2"
+                    type="button"
+                    data-testid="newVacation">
+                    Eigenen Urlaubstimer setzen?
+            </button>
+        </div>
+    </template>
+</main>

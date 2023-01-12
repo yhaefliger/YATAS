@@ -21,22 +21,6 @@ module.exports = function (eleventyConfig) {
   );
   eleventyConfig.addNunjucksGlobal("personal_mail", process.env.PERSONAL_MAIL);
   eleventyConfig.addNunjucksGlobal(
-    "personal_actual_vacation_date",
-    process.env.PERSONAL_ACTUAL_VACATION_DATE
-  );
-  eleventyConfig.addNunjucksGlobal(
-    "personal_vacation_date",
-    process.env.PERSONAL_VACATION_DATE
-  );
-  eleventyConfig.addNunjucksGlobal(
-    "external_vacation_date",
-    process.env.EXTERNAL_VACATION_DATE
-  );
-  eleventyConfig.addNunjucksGlobal(
-    "another_vacation_date",
-    process.env.ANOTHER_VACATION_DATE
-  );
-  eleventyConfig.addNunjucksGlobal(
     "cv_htaccess_user_01",
     process.env.CV_HTACCESS_USER_01
   );
