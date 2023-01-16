@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 ---
 
 {% set vacation_image = "src/images/vacation.jpg" | sharp %}
-<main class="h-screen w-screen flex items-center justify-center" 
+<main class="min-h-screen min-w-screen flex items-center justify-center" 
      @submitvacationform="$store.vacation.submitVactionForm">
     <div x-ref="test"></div>
     <template x-if="$store.vacation.editMode">
@@ -58,7 +58,7 @@ eleventyExcludeFromCollections: true
         </form>
     </template>
     <template x-if="!$store.vacation.editMode">
-        <div class="max-w-xl text-center p-4 space-y-4">
+        <div class="max-w-xl text-center p-4 space-y-4 relative">
             <h1>👒☀️😎🏝️🏖️🌄🚴‍♀️🚴</h1>
             <img alt="photo of vacation place" src="{% getUrl vacation_image | resize({ width: 600 }) | webp %}"/>
             <h1
@@ -70,16 +70,17 @@ eleventyExcludeFromCollections: true
                 -webkit-text-fill-color: transparent; "></h1>
             <h1
             x-text="$store.vacation.format($store.vacation.date)"
-            class="thick-heading text-9xl"
+            class="thick-heading text-[25vw] sm:text-9xl"
             style=" background-image: -webkit-gradient( linear, left top, right top, from(#730D03), color-stop(#667302), to(#BABF15)
                 ); background-image: linear-gradient(33deg, #730D03, #667302, #BABF15); -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent; "></h1>
 
             <button @click="$store.vacation.editMode = true" 
-                    class="btn text-xs absolute bottom-4 right-4 lg:bottom-2 lg:right-2"
+                    class="btn text-xs absolute -bottom-2 right-4"
                     type="button"
-                    data-testid="newVacation">
-                    Eigenen Urlaubstimer setzen?
+                    data-testid="newVacation"
+                    label="Eigenen Urlaubstimer setzen">
+                    +
             </button>
         </div>
     </template>
