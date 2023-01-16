@@ -12,9 +12,20 @@ eleventyExcludeFromCollections: true
         <form @submit.prevent="$dispatch('submitvacationform')" 
               class="max-w-xl space-y-4 border rounded shadow p-4"
               data-testid="vacationForm">
-            <h1 class="thick-heading text-3xl pb-4">
-                📝 Eigenen Urlaub setzen
-            </h1>
+            <div class="flex space-x-2 items-center">
+                {# only show this close button if it's not a fresh page visit.
+                   TODO refactor this to the store. #}
+                <button type="button" 
+                        label="Eingabe abbrechen" 
+                        class="font-sans btn" 
+                        @click="$store.vacation.editMode = false"
+                        x-show="!!$store.vacation.vacationLocation || !!$store.vacation.date">
+                    x
+                </button>
+                <h1 class="thick-heading text-3xl">
+                    📝 Eigenen Urlaub setzen
+                </h1>
+            </div>
             <p>
                 Mithilfe dieses Formulars kannst du deinen eigenen Urlaub setzen. Anschließend erhälst du einen Link, den du teilen kannst:
             </p>
