@@ -26,7 +26,7 @@ test.describe("vacation page without params", () => {
 
 test.describe("vacation page with params", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("vacation?date=01-01-2000");
+    await page.goto("/vacation/?date=2030-01-01");
     // browsersync redirects to correct page so we have to wait
     await page.waitForLoadState("networkidle");
   });

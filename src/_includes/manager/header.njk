@@ -1,13 +1,17 @@
-<header class="w-full bg-cyan-200 tracking-wider py-4 mb-2
+<header class="w-full bg-cyan-200 tracking-wider mb-2
                space-y-4"
         x-data="{settingsMenuVisible: false}">
     <div class="flex items-center">
-        <h1 class="flex-1 text-center uppercase font-bold text-xl -mr-16">Space Haven Manager</h1>
+        <h1 class="flex-1 text-center uppercase font-bold text-xl -mr-16 md:-mr-40">Space Haven Manager</h1>
         <button aria-label="open settings menu" 
                 type="button" 
                 @click="settingsMenuVisible = !settingsMenuVisible"
-                data-testid="toggleSettingsMenu">
-            <img alt="settings menu icon" aria-hidden="true" class="mx-4 h-8 lg:h-10 w-8 lg:w-10" src="{{ "/img/settings.svg" | url }}"/>
+                data-testid="toggleSettingsMenu"
+                class="flex items-center justify-center p-4 md:p-2 md:space-x-4 hover:!bg-cyan-100">
+            <div class="hidden md:block" aria-hidden="true">
+                Settings
+            </div>
+            <img alt="settings menu icon" aria-hidden="true" class="h-8 lg:h-10 w-8 lg:w-10" src="{{ "/img/settings.svg" | url }}"/>
         </button>
     </div>
     <div id="settingsMenu" 
@@ -22,7 +26,7 @@
                 <button data-testid="clearStorage"
                         @click="$store.manager.clearStorage" 
                         class="text-xl text-cyan-200 uppercase w-max p-2 border border-red-300 hover:!bg-red-200/20 max-w-full">
-                    ☢️ clear saved ressources and reload
+                    ☢️ clear saved data and reload
                 </button>
             </li>
             <li class="text-cyan-300 mt-2">

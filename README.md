@@ -37,7 +37,7 @@ in case screenshots changes intentionally (https://playwright.dev/docs/test-snap
 #### Regenerate
 
 ```test
-pnpm playwright test -u
+pnpm playwright test --update-snapshots
 ```
 
 #### CI Snapshots
@@ -45,7 +45,7 @@ pnpm playwright test -u
 If you are not on the same operating system as your CI system, you can use Docker to generate/update the screenshots:
 
 ```bash
-docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.29.0-focal /bin/bash
+docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.31.1-focal /bin/bash
 npm i -g pnpm
 pnpm install
 pnpm playwright test --update-snapshots
