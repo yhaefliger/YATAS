@@ -23,9 +23,6 @@ specifiers:
   tailwindcss: ^3.2.7
   vanilla-cookieconsent: 2.8.9
 
-dependencies:
-  debounce: 1.2.1
-
 devDependencies:
   '@11ty/eleventy': 2.0.0
   '@11ty/eleventy-upgrade-help': 2.0.5
@@ -36,6 +33,7 @@ devDependencies:
   autoprefixer: 10.4.14_postcss@8.4.21
   chart.js: 4.2.1
   concurrently: 7.6.0
+  debounce: 1.2.1
   del-cli: 5.0.0
   eleventy-plugin-sharp: 0.1.1
   esbuild: 0.17.14
@@ -939,7 +937,7 @@ packages:
 
   /debounce/1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
-    dev: false
+    dev: true
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
