@@ -1,0 +1,71 @@
+<form @submit.prevent="$dispatch('submitvacationform')" 
+              class="bg-white max-w-xl space-y-6 rounded-xl mx-4 md:mx-0 shadow-2xl"
+              data-testid="vacationForm">
+    <div class="flex items-center">
+        <div class="w-full flex gap-4 items-center bg-blue-600 p-4 rounded-t-xl">
+            <div aria-hidden="true" class="h-8 w-8 flex items-center justify-center bg-blue-100 border border-blue-200 p-2 rounded-full text-xl">🏝️</div>
+            <h1 class="font-sans font-bold text-xl break-normal text-white">Eigenen Urlaubscountdown setzen</h1>
+        </div>
+    </div>
+    <p class="px-4">
+        Mithilfe dieses Formulars kannst du deinen eigenen Urlaubscountdown setzen. Anschließend erhälst du einen Link, den du teilen kannst:
+    </p>
+    <div class="space-y-4 bg-gray-100 border-y rounded-b-xl border-b-4">
+        <ol class="list-decimal ml-4 space-y-2 p-4 pb-0">
+            <li>
+                <strong class="block">Urlaubstag auswählen</strong>
+                <label for="date">Urlaubsdatum (erforderlich)</label>
+                <input class="block bg-gray-200 text-xl"
+                        type="date"
+                        name="date"
+                        id="date"
+                        x-ref="inputdate"
+                        data-testid="vacationDate"
+                        required>
+            </li>
+            <li>
+                <strong class="block">Urlaubsort auswählen</strong>
+                <label for="vacationlocation">Urlaubsort (optional)</label>
+                <input class="block bg-gray-200 text-xl"
+                        type="text"
+                        name="vacationlocation"
+                        id="vacationlocation"
+                        x-ref="inputvacationlocation"
+                        data-testid="vacationLocation">
+            </li>
+            <li class="hidden">
+                <strong class="block">Hintergrundbild auswählen (optional)</strong>
+                <div class="flex space-x-4 bg-amber-50 border p-4 rounded">
+                    <div>🔐</div>
+                    <div>Dein Hintergrundbild wird nur auf deinem Gerät gespeichert.</div>
+                    <input class="block"
+                            type="file"
+                            name="image"
+                            id="image"
+                            accept="image/*"
+                            x-ref="inputimage">
+                </div>
+            </li>
+        </ol>
+        <template x-if="$store.vacation.generatedLink">
+            <div data-testid="result" class="px-4">
+                Dein Link: 
+                <a :href="$store.vacation.generatedLink" 
+                    target="_blank" rel="noopener noreferrer" 
+                    x-text="$store.vacation.generatedLink"></a>
+            </div>
+        </template>
+        <div class="flex gap-x-2 justify-between items-center border-t p-4">
+            <button data-testid="submitButton" class="btn btn--lg btn--blue">Speichern</button>
+            {# only show this close button if it's not a fresh page visit.
+                TODO refactor this to the store. #}
+            <button type="button"
+                    label="Eingabe abbrechen"
+                    class="btn"
+                    @click="$store.vacation.editMode = false"
+                    x-show="!!$store.vacation.vacationLocation || !!$store.vacation.date">
+                Abbrechen
+            </button>
+        </div>
+    </div>
+</form>

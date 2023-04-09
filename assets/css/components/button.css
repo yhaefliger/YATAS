@@ -17,4 +17,11 @@
   &--primary:hover {
     @apply bg-cyan-800;
   }
+
+  &--blue {
+    @apply bg-blue-700 text-white;
+  }
+  &--blue:hover {
+    @apply bg-blue-800;
+  }
 }
