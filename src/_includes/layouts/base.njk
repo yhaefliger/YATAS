@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="xDOM">
   <head>
     <title>{{ title }}</title>
     <meta charset="UTF-8"/>
@@ -16,8 +16,18 @@
     {% block head %}{% endblock %}
   </head>
   <body class="antialiased">
-    {% block content %}
-      {{ content | safe }}
-    {% endblock %}
+
+    <div class="max-w-7xl mx-auto px-8">
+      {% include "../partial/navbar.njk" %}
+
+      <main class="my-8">
+        {% block content %}
+          {{ content | safe }}
+        {% endblock %}
+      </main>
+
+      {% include "../partial/footer.njk" %}
+    </div>
+
   </body>
 </html>
