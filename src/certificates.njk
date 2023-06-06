@@ -4,7 +4,7 @@ description: Yet Another Tailwind Alpine Starter Project for 11ty!
 layout: layouts/base.njk
 permalink: /achievements/
 ---
-<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-12">
+<div class=" w-full min-h-screen grid sm:grid-cols-2 md:grid-cols-3 gap-12 rounded-md">
 
     {%- for item in certificates -%}
         <div x-data="{ open: false }"
@@ -22,7 +22,7 @@ permalink: /achievements/
                         {% endif %}
                     </div>
                 </div>
-                <div class="col-span-3 flex flex-col justify-between gap-4">
+                <div class="col-span-3 flex flex-col justify-center gap-4">
                     <p>{{ item.name }}</p>
                     <p class="mb-0 text-xs">Earned {{ item.issueDate }}</p>
                 </div>
