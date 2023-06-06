@@ -72,6 +72,7 @@ const certificates = [
         link: "https://coursera.org/verify/D966TT5D4NFT",
         img: "Full-Stack-Software-Developer-Assessment.jpeg"
     }
+
 ];
 
 module.exports = certificates;
