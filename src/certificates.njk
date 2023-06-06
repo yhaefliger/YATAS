@@ -2,7 +2,7 @@
 title: Aleksandr Zapparov
 description: Yet Another Tailwind Alpine Starter Project for 11ty!
 layout: layouts/base.njk
-permalink: /certificates/
+permalink: /achievements/
 ---
 <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-12">
 
@@ -12,7 +12,7 @@ permalink: /certificates/
              class="flex w-full">
 
             <!-- Trigger -->
-            <div class="p-4 w-full rounded-md shadow-lg bg-white bg-opacity-50 grid grid-cols-4 gap-4 select-none cursor-pointer ring-4 italic shadow-inner" x-on:click="open = true">
+            <div class="p-4 w-full rounded-md shadow-lg bg-white bg-opacity-50 grid grid-cols-4 gap-4 select-none cursor-pointer border-4 border-blue-300 italic shadow-inner" x-on:click="open = true">
                 <div>
                     <div class="p-2 rounded-full shadow-lg bg-white aspect-square text-blue-400 flex justify-center items-center">
                         {% if item.issuer == 'IBM' %}
@@ -47,7 +47,7 @@ permalink: /certificates/
                      class="relative flex min-h-screen items-center justify-center p-4">
                     <div x-on:click.stop
                          x-trap.noscroll.inert="open"
-                         class="relative w-full max-w-2xl overflow-y-auto rounded-xl bg-white p-12 shadow-lg">
+                         class="relative w-full max-w-2xl overflow-y-auto rounded-xl bg-neutral p-12 shadow-lg">
                         <!-- Title -->
 
                         <!-- Content -->

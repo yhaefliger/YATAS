@@ -8,7 +8,7 @@ export default () => {
         getThemeName() {
             if (localStorage.getItem('theme')) {
                 this.theme.name = localStorage.getItem('theme');
-                this.theme.dark = this.theme.name === 'vampire';
+                this.theme.dark = this.theme.name === 'dracula';
             } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 this.theme.name = 'dracula';
                 this.theme.dark = true;
