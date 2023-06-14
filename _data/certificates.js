@@ -71,6 +71,12 @@ const certificates = [
         issueDate: "2023-02-06",
         link: "https://coursera.org/verify/D966TT5D4NFT",
         img: "Full-Stack-Software-Developer-Assessment.jpeg"
+    }, {
+        name: "Cloud Application Development Foundations",
+        issuer: "IBM",
+        issueDate: "2022-04-12",
+        link: "https://www.coursera.org/account/accomplishments/specialization/KZKJWSNU93VN",
+        img: "Cloud-Application-Development-Foundations.png"
     }
 
 ];
