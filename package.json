@@ -29,6 +29,7 @@
     "del-cli": "^5.0.0",
     "esbuild": "^0.17.19",
     "html-minifier": "^4.0.0",
+    "luxon": "^3.3.0",
     "md5": "^2.3.0",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2"

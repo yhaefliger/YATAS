@@ -1,5 +1,7 @@
 const htmlmin = require('html-minifier')
 const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+const { DateTime } = require("luxon");
+const fs = require('fs')
 
 module.exports = function(eleventyConfig) {
   /**
@@ -12,6 +14,26 @@ module.exports = function(eleventyConfig) {
    * Files to copy
    * https://www.11ty.dev/docs/copy/
    */
+
+  const getSvgContent = function (fileName, classes = '') {
+    const relativeFilePath = `./src/svg/${fileName}.svg`;
+    let data = fs.readFileSync(relativeFilePath,
+        function(err, contents) {
+          if (err) return err
+          return contents
+        });
+
+    data = data.toString('utf8');
+
+    if (classes) {
+      data = data.replace("<svg", `<svg class="${classes}"`)
+    }
+
+    return data
+  }
+
+  eleventyConfig.addShortcode("svg", getSvgContent);
+
   eleventyConfig.addPassthroughCopy('src/img')
 
   /**
@@ -33,6 +55,10 @@ module.exports = function(eleventyConfig) {
 
     return content
   })
+
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    return DateTime.fromFormat(dateObj, "yyyy-dd-mm").toLocaleString(DateTime.DATE_MED);
+  });
 
   return {
     dir: {
