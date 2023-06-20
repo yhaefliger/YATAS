@@ -77,6 +77,18 @@ const certificates = [
         issueDate: "2022-04-12",
         link: "https://www.coursera.org/account/accomplishments/specialization/KZKJWSNU93VN",
         img: "Cloud-Application-Development-Foundations.png"
+    }, {
+        name: "DELE Level B2",
+        issuer: "INSTITUTO CERVANTES",
+        issueDate: "2022-13-10",
+        link: "",
+        img: "DELE_B2.png"
+    }, {
+        name: "Pearson EDEXCEL International GCSE",
+        issuer: "Pearson EDEXCEL",
+        issueDate: "2023-30-09",
+        link: "",
+        img: "British-Council-GCSE-2022.png"
     }
 
 ];

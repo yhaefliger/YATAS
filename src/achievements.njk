@@ -20,6 +20,10 @@ permalink: /achievements/
                         <div class="p-2 rounded-full shadow-lg bg-white aspect-square text-blue-400 flex justify-center items-center">
                             {% if item.issuer == 'IBM' %}
                                 {% svg "ibm-logo-svgrepo-com", "w-full" %}
+                            {% elif item.issuer == 'INSTITUTO CERVANTES'%}
+                                {% svg "instituto-cervantes", "w-full" %}
+                            {% elif item.issuer == 'Pearson EDEXCEL' %}
+                                {% svg "pearson-logo", "w-full" %}
                             {% else %}
                                 {% svg "certificate", "max-w-full w-10 h-10" %}
                             {% endif %}
@@ -51,16 +55,24 @@ permalink: /achievements/
                         <div x-on:click.stop
                              x-trap.noscroll.inert="open"
                              class="relative w-full max-w-2xl overflow-y-auto rounded-xl bg-base-200 p-12 shadow-lg">
-                            <!-- Title -->
 
                             <!-- Content -->
-                            <div class="gap-2">
-                                <a target="_blank" href="{{ item.link }}"><figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure></a>
-                                <p class="text-center text-sm">Verify at: <a class="link text-blue-400 cursor-pointer" target="_blank" href="{{ item.link }}">{{ item.link }}</a></p>
-                            </div>
+                            {% if item.issuer ==  'IBM'%}
+                                <div class="gap-2">
+                                    <a target="_blank" href="{{ item.link }}"><figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure></a>
+                                    <p class="text-center text-sm">Verify at: <a class="link text-blue-400 cursor-pointer" target="_blank" href="{{ item.link }}">{{ item.link }}</a></p>
+                                </div>
+                            {% elif item.issuer == 'INSTITUTO CERVANTES' or 'Pearson EDEXCEL' %}
+                                <figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure>
+                            {% else %}
+                                <h1 class="text-3xl">
+                                    404<br>
+                                    Page not Found
+                                </h1>
+                            {% endif %}
                             <!-- Buttons -->
                             <span class="absolute top-2 right-2 cursor-pointer btn btn-ghost btn-circle" x-on:click="open = false">
-                                {% svg "x", "w-5 h-5" %}
+                                    {% svg "x", "w-5 h-5" %}
                             </span>
                         </div>
                     </div>
