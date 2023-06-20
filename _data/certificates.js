@@ -89,6 +89,12 @@ const certificates = [
         issueDate: "2023-30-09",
         link: "",
         img: "British-Council-GCSE-2022.png"
+    }, {
+        name: "Pearson EDEXCEL International GCSE",
+        issuer: "Pearson EDEXCEL",
+        issueDate: "2023-30-09",
+        link: "",
+        img: "British-Council-GCSE-2022.png"
     }
 
 ];
