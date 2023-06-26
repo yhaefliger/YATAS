@@ -90,11 +90,23 @@ const certificates = [
         link: "",
         img: "British-Council-GCSE-2022.png"
     }, {
-        name: "Pearson EDEXCEL International GCSE",
+        name: "Pearson EDEXCEL International As Levels Physics",
         issuer: "Pearson EDEXCEL",
-        issueDate: "2023-30-09",
+        issueDate: "2023-08-03",
         link: "",
-        img: "British-Council-GCSE-2022.png"
+        img: "As-level-Pearson-Physics.png"
+    }, {
+        name: "CIE As Levels Maths and English Language",
+        issuer: "CIE",
+        issueDate: "2023-01-11",
+        link: "",
+        img: "As-levels-CIE.png"
+    }, {
+        name: "IELTS English",
+        issuer: "CIE",
+        issueDate: "2022-03-03",
+        link: "",
+        img: "IELTS.png"
     }
 
 ];
