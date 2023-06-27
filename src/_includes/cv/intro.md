@@ -1,6 +1,6 @@
 <h2>Hi,</h2>
 
-Ich bin Frederik, sechsundzwanzig Jahre jung, Webentwickler und (Web-)Accessibility Enthusiast aus Hamburg.
+Ich bin Frederik, siebenundzwanzig Jahre jung, Webentwickler und (Web-)Accessibility Enthusiast aus Hamburg.
 
 ## Ausbildung
 
