@@ -24,6 +24,8 @@ permalink: /achievements/
                                 {% svg "instituto-cervantes", "w-full" %}
                             {% elif item.issuer == 'Pearson EDEXCEL' %}
                                 {% svg "pearson-logo", "w-full" %}
+                            {% elif item.issuer == 'CIE' %}
+                                {% svg "CIE", "w-full" %}
                             {% else %}
                                 {% svg "certificate", "max-w-full w-10 h-10" %}
                             {% endif %}
