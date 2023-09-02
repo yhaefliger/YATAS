@@ -25,7 +25,9 @@ permalink: /achievements/
                             {% elif item.issuer == 'Pearson EDEXCEL' %}
                                 {% svg "pearson-logo", "w-full" %}
                             {% elif item.issuer == 'CIE' %}
-                                {% svg "CIE", "w-full" %}
+                                {% svg "CIE", "w-full w-10 h-10" %}
+                            {% elif item.issuer == 'Johns Hopkins University'%}
+                                {% svg "Johns_Hopkins_University", "w-full" %}
                             {% else %}
                                 {% svg "certificate", "max-w-full w-10 h-10" %}
                             {% endif %}
@@ -33,7 +35,8 @@ permalink: /achievements/
                     </div>
                     <div class="col-span-3 flex flex-col gap-4">
                         <p>{{ item.name }}</p>
-                        <p class="mb-0 text-xs">Earned {{ item.issueDate | readableDate }}</p>
+                        <p>{{ item.issuer }}</p>
+                        <p class="mb-0 text-xs">Earned {{ item.issueDate | readableDate("LLLL dd, yyyy") }}</p>
                     </div>
                 </div>
 
@@ -55,22 +58,16 @@ permalink: /achievements/
                          x-on:click="open = false"
                          class="relative flex min-h-screen items-center justify-center p-4">
                         <div x-on:click.stop
-                             x-trap.noscroll.inert="open"
                              class="relative w-full max-w-2xl overflow-y-auto rounded-xl bg-base-200 p-12 shadow-lg">
 
                             <!-- Content -->
-                            {% if item.issuer ==  'IBM'%}
+                            {% if item.link != "" %}
                                 <div class="gap-2">
-                                    <a target="_blank" href="{{ item.link }}"><figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure></a>
-                                    <p class="text-center text-sm">Verify at: <a class="link text-blue-400 cursor-pointer" target="_blank" href="{{ item.link }}">{{ item.link }}</a></p>
+                                    <a target="_blank" href={{ item.link }}><figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure></a>
+                                    <p class="text-center text-sm"><a class="link text-blue-400 cursor-pointer" target="_blank" href={{ item.link }}>Verify over here</a></p>
                                 </div>
-                            {% elif item.issuer == 'INSTITUTO CERVANTES' or 'Pearson EDEXCEL' %}
-                                <figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}" /></figure>
                             {% else %}
-                                <h1 class="text-3xl">
-                                    404<br>
-                                    Page not Found
-                                </h1>
+                                <figure><img src="/img/certificates/{{ item.img }}" alt="{{ item.name }}"></figure>
                             {% endif %}
                             <!-- Buttons -->
                             <span class="absolute top-2 right-2 cursor-pointer btn btn-ghost btn-circle" x-on:click="open = false">
