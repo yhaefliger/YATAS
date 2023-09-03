@@ -40,6 +40,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+package-lock.json
 
 # TypeScript v1 declaration files
 typings/
@@ -103,16 +104,23 @@ dist
 # TernJS port file
 .tern-port
 
-# Mac
+# 11ty/jekyll
+_site
+
+# General
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# Icon must end with two \r
+Icon
 
 # Thumbnails
 ._*
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
+/temp
 .fseventsd
 .Spotlight-V100
 .TemporaryItems
@@ -127,10 +135,33 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Windows
-Thumbs.db
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# WebStorm
-.idea/
-_data
-_site
+# IntelliJ
+.idea
+*.iws
+*.iml
+*.ipr
+
+# Random other files
+NOTEPAD.txt
+NOTEPAD.js
+NOTEPAD
+
+# Netlify stuff
+.netlify
+
+netlify/functions/onrequest/**
+!netlify/functions/onrequest/index.js
+
+netlify/functions/dynamic/**
+!netlify/functions/dynamic/index.js
+
+netlify/functions/serverless/**
+!netlify/functions/serverless/index.js
+.vercel
