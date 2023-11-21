@@ -12,6 +12,7 @@ Minimal 11ty starter project that build css with tailwindcss cli and [esbuild](h
 
 ## Stack
 
+* 11ty v2
 * TailwindCSS v3
 * Apline.js v3
 

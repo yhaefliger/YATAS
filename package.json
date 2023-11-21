@@ -1,6 +1,6 @@
 {
   "name": "yatas",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Yet Another Tailwind Apline Starter",
   "scripts": {
     "clean": "del _site",
@@ -20,16 +20,16 @@
   "author": "Yann Haefliger<hello@needbrainz.com>",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "@11ty/eleventy-upgrade-help": "^1.0.1",
-    "alpinejs": "^3.0.6",
-    "autoprefixer": "^10.4.0",
-    "concurrently": "^7.0.0",
-    "del-cli": "^4.0.0",
-    "esbuild": "^0.14.0",
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-upgrade-help": "^2.0.5",
+    "alpinejs": "^3.13.3",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "del-cli": "^5.1.0",
+    "esbuild": "^0.19.7",
     "html-minifier": "^4.0.0",
     "md5": "^2.3.0",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.7"
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
   }
 }
